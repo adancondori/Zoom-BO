@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/margin_7_"
+    android:paddingRight="@dimen/margin_7_"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ServicioAyudaActivity" >
+
+    <include
+        android:id="@+id/include3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/margin_7_"
+        layout="@layout/adapter_item_oferta" />
+
+    <include
+        android:id="@+id/include2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/include1"
+        android:layout_marginTop="@dimen/margin_7_"
+        layout="@layout/adapter_item_oferta" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/include2"
+        android:layout_marginTop="@dimen/margin_7_"
+        layout="@layout/adapter_item_oferta" />
+
+    <include
+        android:id="@+id/include1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/include3"
+        android:layout_marginTop="@dimen/margin_7_"
+        layout="@layout/adapter_item_oferta" />
+
+</RelativeLayout>

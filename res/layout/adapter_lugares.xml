@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/background_listview" >
+
+    <TextView
+        android:id="@+id/txt_detalle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/redondeado_fondo"
+        android:drawableLeft="@drawable/p_location"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:gravity="center_vertical|left"
+        android:hint="@string/title_direccion_domicilio"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:singleLine="true"
+        android:text="@string/title_direccion_domicilio"
+        android:textColor="@color/negro"
+        android:textColorHint="@color/colorhint"
+        android:textSize="18sp" />
+
+</RelativeLayout>

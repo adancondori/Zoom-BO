@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="list_item_title">#ffffff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="img_background_pressed">#FFFF00</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="counter_text_color_cabecera">#FFFFFF</color>
+    <color name="sectionSeparatorColour">#a0a0a0</color>
+    <color name="colordebordes">#a0a0a0</color>
+    <color name="colordeperfil">#4F5D73</color>
+    <color name="colordelogonrojo">#E25441</color>
+    <color name="colordelogonamarillo">#FDC71F</color>
+    <color name="colordelogonazul">#376AB2</color>
+    <color name="colordelogonverde">#1BA260</color>
+    <color name="colorhint">#DDDDDD</color>
+    <color name="red">#E32636</color>
+    <color name="tranparnte">#6600a0a0</color>
+    <color name="platino">#E5E4E2</color>
+    <color name="grey_login">#E6E6E6</color>
+    <color name="negro">#000000</color>
+    <color name="celeste">#FF3F9FE0</color>
+    <color name="azul_celeste">#4F5D73</color>
+    <color name="celeste_trasparente">#994F5D73</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="celeste2">#26A9E1</color>
+    <color name="celesteclaro">#B9E1F8</color>
+    <color name="lila">#AA6CC1</color>
+    <color name="naranja">#F4BB4A</color>
+    <color name="verde">#A4C53A</color>
+    <color name="verdelechuga">#D6DE23</color>
+    <color name="verdeoscuro">#79C0CD</color>
+    <color name="azulverde">#00A79D</color>
+    <color name="caqui">#F2F5EE</color>
+    <color name="fondo">#99C9CED0</color>
+
+    <!-- colores del sistema -->
+    <color name="background_abajo_rela">#4F5D73</color>
+    <color name="background_line">#AAAAAA</color>
+    <!-- <color name="background_actionbar">#4F5D73</color> -->
+    <color name="background_actionbar">#D0D0D1</color>
+    <color name="background_listview">#AAFFFFFF</color>
+    <color name="background">#FFFFFF</color>
+    <color name="background_titles">#000000</color>
+    <color name="seleccion">#EBEBEB</color>
+    <color name="background_zebra">#99EEEEEE</color>
+
+    <drawable name="color_three">#001100</drawable>
+    <drawable name="white">#FFFFFF</drawable>
+
+    <color name="color1">#93138168</color>
+    <color name="color2">#DDE32636</color>
+    <color name="color3">#DDd01800</color>
+    <color name="color4">#DDFFBF00</color>
+
+</resources>

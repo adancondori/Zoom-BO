@@ -1,0 +1,10 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+
+    <!-- list_background_pressed -->
+    <gradient
+        android:angle="90"
+        android:endColor="@color/seleccion"
+        android:startColor="@color/seleccion" />
+
+</shape>

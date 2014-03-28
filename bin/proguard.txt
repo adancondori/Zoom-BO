@@ -1,0 +1,168 @@
+# view res/layout/activity_favoritos.xml #generated:14
+# view res/layout/fragment_menuizq.xml #generated:21
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/activity_main.xml #generated:1
+-keep class android.support.v4.widget.DrawerLayout { <init>(...); }
+
+# view res/layout/abs__screen_action_bar.xml #generated:44
+# view res/layout/abs__screen_action_bar_overlay.xml #generated:27
+# view res/layout/abs__screen_simple.xml #generated:32
+# view res/layout/abs__screen_simple_overlay_action_mode.xml #generated:27
+# view xlarge\res/layout-xlarge/abs__screen_action_bar.xml #generated:44
+# view xlarge\res/layout-xlarge/abs__screen_action_bar_overlay.xml #generated:25
+-keep class com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout { <init>(...); }
+
+# view large\res/layout-large/abs__action_mode_close_item.xml #generated:17
+# view res/layout/abs__action_mode_close_item.xml #generated:17
+-keep class com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout { <init>(...); }
+
+# view res/layout/abs__action_menu_item_layout.xml #generated:17
+-keep class com.actionbarsherlock.internal.view.menu.ActionMenuItemView { <init>(...); }
+
+# view res/layout/abs__action_menu_layout.xml #generated:17
+-keep class com.actionbarsherlock.internal.view.menu.ActionMenuView { <init>(...); }
+
+# view res/layout/abs__popup_menu_item_layout.xml #generated:17
+-keep class com.actionbarsherlock.internal.view.menu.ListMenuItemView { <init>(...); }
+
+# view res/layout/abs__screen_action_bar.xml #generated:27
+# view res/layout/abs__screen_action_bar.xml #generated:51
+# view res/layout/abs__screen_action_bar_overlay.xml #generated:30
+# view res/layout/abs__screen_action_bar_overlay.xml #generated:53
+# view xlarge\res/layout-xlarge/abs__screen_action_bar.xml #generated:27
+# view xlarge\res/layout-xlarge/abs__screen_action_bar_overlay.xml #generated:28
+-keep class com.actionbarsherlock.internal.widget.ActionBarContainer { <init>(...); }
+
+# view res/layout/abs__action_mode_bar.xml #generated:19
+# view res/layout/abs__screen_action_bar.xml #generated:37
+# view res/layout/abs__screen_action_bar_overlay.xml #generated:41
+# view xlarge\res/layout-xlarge/abs__screen_action_bar.xml #generated:37
+# view xlarge\res/layout-xlarge/abs__screen_action_bar_overlay.xml #generated:38
+-keep class com.actionbarsherlock.internal.widget.ActionBarContextView { <init>(...); }
+
+# view res/layout/abs__screen_action_bar.xml #generated:32
+# view res/layout/abs__screen_action_bar_overlay.xml #generated:36
+# view xlarge\res/layout-xlarge/abs__screen_action_bar.xml #generated:32
+# view xlarge\res/layout-xlarge/abs__screen_action_bar_overlay.xml #generated:33
+-keep class com.actionbarsherlock.internal.widget.ActionBarView { <init>(...); }
+
+# view res/layout/abs__action_bar_home.xml #generated:17
+-keep class com.actionbarsherlock.internal.widget.ActionBarView$HomeView { <init>(...); }
+
+# view res/layout/abs__action_menu_item_layout.xml #generated:40
+-keep class com.actionbarsherlock.internal.widget.CapitalizingButton { <init>(...); }
+
+# view res/layout/abs__activity_chooser_view.xml #generated:19
+-keep class com.actionbarsherlock.internal.widget.IcsLinearLayout { <init>(...); }
+
+# view res/layout/abs__action_bar_tab.xml #generated:3
+-keep class com.actionbarsherlock.internal.widget.ScrollingTabContainerView$TabView { <init>(...); }
+
+# view res/layout/abs__action_bar_tab_bar_view.xml #generated:3
+-keep class com.actionbarsherlock.internal.widget.TabsLinearLayout { <init>(...); }
+
+# view res/layout/abs__search_view.xml #generated:84
+-keep class com.actionbarsherlock.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# view res/layout/fragment_home.xml #generated:8
+-keep class com.android.adancc.panelupsliding.SlidingLayoutUpPanel { <init>(...); }
+
+# view AndroidManifest.xml #generated:129
+-keep class com.facebook.LoginActivity { <init>(...); }
+
+# view res/layout/com_facebook_usersettingsfragment.xml #generated:48
+-keep class com.facebook.widget.LoginButton { <init>(...); }
+
+# view res/layout/activity_detalle_contacto.xml #generated:8
+# view res/layout/fragment_home.xml #generated:29
+-keep class com.google.android.gms.maps.SupportMapFragment { <init>(...); }
+
+# view res/layout/fragment_event.xml #generated:2
+# view res/layout/list_con_margin.xml #generated:2
+-keep class com.handmark.pulltorefresh.library.PullToRefreshListView { <init>(...); }
+
+# view res/layout/slidingmenumain.xml #generated:2
+-keep class com.jeremyfeinstein.slidingmenu.lib.SlidingMenu { <init>(...); }
+
+# view res/layout/activity_favoritos.xml #generated:8
+# view res/layout/fragment_menuizq.xml #generated:9
+-keep class com.tabs.adancc.desplazarview.TabsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:89
+-keep class com.vista.iucamara.CamaraActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:162
+-keep class com.vista.menuder.SearchActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class com.vista.menuizq.AcercaZoomActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:113
+-keep class com.vista.menuizq.ContactosActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:157
+-keep class com.vista.menuizq.DetalleContactoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:119
+-keep class com.vista.menuizq.EventosActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:99
+-keep class com.vista.menuizq.FavoritosActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:142
+-keep class com.vista.menuizq.LugaresActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:77
+-keep class com.vista.menuizq.PerfilActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:104
+-keep class com.vista.menuizq.PreferenciasActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:132
+-keep class com.vista.menuizq.ServicioAyudaActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:94
+-keep class com.vista.menuizq.SitiosActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:147
+-keep class com.vista.zoonv1.BuscarContactoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:124
+-keep class com.vista.zoonv1.FaceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:62
+-keep class com.vista.zoonv1.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:43
+-keep class com.vista.zoonv1.MyApliccion { <init>(...); }
+
+# view AndroidManifest.xml #generated:51
+-keep class com.vista.zoonv1.PrincipalActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:137
+-keep class com.vista.zoonv1.RecuperarcontrasenaActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:83
+-keep class com.vista.zoonv1.RegistrarseActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:152
+-keep class com.vista.zoonv1.SoliucitudesActivity { <init>(...); }
+
+# onClick res/layout/activity_contactos.xml #generated:19
+-keepclassmembers class * { *** crearcontactos(...); }
+
+# onClick res/layout/activity_contactos.xml #generated:35
+-keepclassmembers class * { *** crearsolicitud(...); }
+
+# onClick res/layout/activity_principal.xml #generated:201
+-keepclassmembers class * { *** olvidoContracena(...); }
+
+# onClick res/layout/activity_principal.xml #generated:179
+# onClick res/layout/activity_principal.xml #generated:58
+-keepclassmembers class * { *** registrarse(...); }
+
+# onClick res/layout/activity_contactos.xml #generated:50
+# onClick res/layout/activity_principal.xml #generated:146
+-keepclassmembers class * { *** validardatos(...); }
+

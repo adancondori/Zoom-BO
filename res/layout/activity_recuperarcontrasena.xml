@@ -1,0 +1,64 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:focusableInTouchMode="true" >
+
+    <requestFocus />
+
+    <!-- Login form -->
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff" >
+
+        <LinearLayout
+            style="@style/LoginFormContainer"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/redondeado"
+                android:drawableLeft="@drawable/p_email"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint="@string/string_prompt_email"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textColor="@color/negro"
+                android:textColorHint="@color/colorhint"
+                android:textSize="18sp" >
+            </EditText>
+
+            <Button
+                android:id="@+id/recuperar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/redondeadobotton"
+                android:drawableLeft="@drawable/success"
+                android:paddingLeft="5dp"
+                android:paddingRight="48dp"
+                android:text="@string/string_action_recuparar"
+                android:textColor="@color/blanco"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/login_status_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/string_recuperarcontrasena"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+    </ScrollView>
+
+</merge>

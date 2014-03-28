@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <!-- <style name="AppTheme" parent="AppBaseTheme"> -->
+    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <!-- </style> -->
+    <!--
+    <style name="AppBaseThemecolor" parent="Theme.Sherlock"></style>    
+    AZUL_CELESTE
+    -->
+    <style name="AppBaseThemecolor" parent="Theme.Sherlock.Light"></style>
+
+    <style name="AppThemecolor" parent="AppBaseThemecolor">
+        <item name="android:windowBackground">@color/blanco</item>
+        <item name="android:actionBarStyle">@style/ActionBarStylecolor</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_drawer</item>
+    </style>
+
+    <style name="ActionBarStylecolor" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:icon">@drawable/ic_launcher</item>
+        <item name="android:background">@color/background_actionbar</item>
+    </style>
+
+    <!-- mi estilo nuevo -->
+    <!-- mi estilo nuevo -->
+    <!-- mi estilo nuevo -->
+    <!-- mi estilo nuevo -->
+    <!-- mi estilo nuevo -->
+    <!-- mi estilo nuevo -->
+
+    <style name="AppTheme" parent="Theme.Sherlock"></style>
+
+    <attr name="actionBarSize2" format="dimension">
+        <enum name="wrap_content" value="0" />
+    </attr>
+
+    <style name="LoginFormContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <!-- stylo para Dialog -->
+
+</resources>

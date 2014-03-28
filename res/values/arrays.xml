@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="entries_list_contacto">
+        <item>0:Juancito pepe</item>
+        <item>0:Dionicia ortega</item>
+        <item>0:Zoom carlos bustamente</item>
+    </string-array>
+    <string-array name="entries_list_preference">
+        <item>Alpha Option 01</item>
+        <item>Beta Option 02</item>
+        <item>Charlie Option 03</item>
+    </string-array>
+    <string-array name="entryvalues_list_preference">
+        <item>Casa</item>
+        <item>Ventas</item>
+        <item>Trabajo</item>
+    </string-array>
+    <string-array name="locations">
+        <item>Mi casa</item>
+        <item>Mi trabajo</item>
+    </string-array>
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>1:Adan Condori C</item>
+        <item>2:PERSONAL</item>
+        <item>0:Mi Perfil</item>
+        <item>0:Mis Lugares</item>
+        <item>0:Mis Favoritos</item>
+        <item>0:Mis Contactos</item>
+        <item>0:Mis Eventos</item>
+        <item>0:Mis Preferencias</item>
+        <item>2:CONFIGURACIÓN</item>
+        <item>0:Mi Cuenta   (Premium) </item>
+        <item>0:Terminos y Condición</item>
+        <item>0:Servicio de Ayuda</item>
+        <item>0:Acerca de Zoom</item>
+        <item>0:Cerrar Sesion</item>
+        <item>3:ZOOM.BO   ©2014</item>
+    </string-array>
+
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/briefcase</item>
+        <item>@drawable/browser</item>
+        <item>@drawable/profle</item>
+        <item>@drawable/location</item>
+        <item>@drawable/heart</item>
+        <item>@drawable/contacts</item>
+        <item>@drawable/calendar</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/bus</item>
+        <item>@drawable/trophy</item>
+        <item>@drawable/caution</item>
+        <item>@drawable/umbrella</item>
+        <item>@drawable/brightness</item>
+        <item>@drawable/power</item>
+        <item>@drawable/ic_pagesderecha</item>
+        <item>@drawable/waste</item>
+        <item>@drawable/ic_pagesderecha</item>
+        <item>@drawable/ic_pagesderecha</item>
+    </array>
+
+    <!-- Event Items -->
+    <string-array name="event_items">
+        <item>2:FAVORITOS</item>
+        <item>0:Barracas</item>
+        <item>0:Joyerias</item>
+        <item>0:Fiestas</item>
+        <item>0:Ver Mas...</item>
+        <item>2:COMIDAS Y BEBIDAS</item>
+        <item>0:Buffet</item>
+        <item>0:Polleria </item>
+        <item>0:Pollos </item>
+        <item>0:Ver Mas...</item>
+        <item>2:ENTRETENIMIENTO</item>
+        <item>0:Fiestas</item>
+        <item>0:Taxis</item>
+        <item>0:Cines</item>
+        <item>0:Ver Mas...</item>
+        <item>2:OTROS</item>
+        <item>0:Ayuda</item>
+        <item>0:Otros</item>
+    </string-array>
+
+    <!-- Event as the titles are in -->
+    <array name="event_icons">
+        <item>@drawable/briefcase</item>
+        <item>@drawable/browser</item>
+        <item>@drawable/booklet</item>
+        <item>@drawable/browser</item>
+        <item>@drawable/vermas</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/contacts</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/browser</item>
+        <item>@drawable/vermas</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/contacts</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/compose</item>
+        <item>@drawable/vermas</item>
+        <item>@drawable/bus</item>
+        <item>@drawable/security</item>
+        <item>@drawable/home</item>
+    </array>
+
+    <!-- Oferta Items -->
+    <string-array name="oferta_items">
+        <item>2:Vendo casas en la urbanización cotoca...</item>
+        <item>0:Buffet</item>
+        <item>0:Polleria </item>
+        <item>0:Pollos </item>
+        <item>0:Ver Mas...</item>
+        <item>2:FAVORITOS</item>
+        <item>0:Barracas</item>
+        <item>0:Trabajo</item>
+        <item>0:Fiestas</item>
+        <item>0:Ver Mas...</item>
+        <item>2:DIVERSIÓN</item>
+        <item>0:Buris</item>
+        <item>2:VENTA  DE:</item>
+        <item>0:Ropas</item>
+        <item>0:Zapatos</item>
+        <item>0:Abarrotes</item>
+        <item>0:Ver Mas...</item>
+    </string-array>
+
+    <!-- oferta as the titles are in -->
+    <array name="oferta_icons">
+        <item>@drawable/briefcase</item>
+        <item>@drawable/browser</item>
+        <item>@drawable/booklet</item>
+        <item>@drawable/browser</item>
+        <item>@drawable/vermas</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/contacts</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/browser</item>
+        <item>@drawable/vermas</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/contacts</item>
+        <item>@drawable/colorwheel</item>
+        <item>@drawable/compose</item>
+        <item>@drawable/vermas</item>
+        <item>@drawable/bus</item>
+        <item>@drawable/security</item>
+        <item>@drawable/home</item>
+    </array>
+
+    <!-- Aviso Items -->
+    <string-array name="aviso_items">
+        <item>2:Necesitas casa no dudes en llamar al 79050606...</item>
+        <item>0:Neceito Ama de casa llamar 70024174</item>
+        <item>0:Necesito ayudante de albañil cel: 72180342</item>
+        <item>0:Empresa importante requiere personal...</item>
+        <item>0:Estas cansado de ser gordito ven y baja...</item>
+        <item>2:Empresa importante requiere personal...</item>
+        <item>0:Gran inaguración</item>
+        <item>0:Trabajos</item>
+        <item>0:Fiestas</item>
+        <item>0:Ver Mas...</item>
+        <item>2:Busco susuki barato de 10</item>
+        <item>0:Venso guitarra</item>
+        <item>2:Ven y dona Sangre. Cruz Roja</item>
+        <item>0:Celulares al por mayor y baratisimos</item>
+        <item>0:Quieres un hostin gratis</item>
+    </string-array>
+
+    <drawable name="ab_bg_black">#88000000</drawable>
+
+</resources>

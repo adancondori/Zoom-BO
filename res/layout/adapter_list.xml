@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_listview" >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/title_content_imagendescripcion"
+        android:padding="15sp"
+        android:src="@drawable/profle" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/icon"
+        android:gravity="center_vertical"
+        android:text="Ing. Informatico"
+        android:textColor="@color/background_titles"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_toRightOf="@+id/icon"
+        android:gravity="center_vertical"
+        android:text="Adan Condori C"
+        android:textColor="@color/background_titles"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

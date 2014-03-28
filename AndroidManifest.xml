@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vista.zoonv1"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <permission
+        android:name="com.vista.zoonv1.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.vista.zoonv1.permission.MAPS_RECEIVE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
+    <supports-gl-texture android:name="GL_IMG_texture_compression_pvrtc" />
+
+    <application
+        android:name="com.vista.zoonv1.MyApliccion"
+        android:allowBackup="true"
+        android:icon="@drawable/icono"
+        android:label="@string/app_name"
+        android:theme="@style/Sherlock.__Theme.Light" >
+
+        <!-- android:theme="@style/Sherlock.__Theme.Light" > -->
+        <activity
+            android:name="com.vista.zoonv1.PrincipalActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vista.zoonv1.MainActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppThemecolor"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyA0ssyogYezTG5Rdp0MvEnZAGtHap5775I" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.vista.menuizq.PerfilActivity"
+            android:label="@string/title_activity_perfil"
+            android:theme="@style/AppThemecolor"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.vista.zoonv1.RegistrarseActivity"
+            android:label="@string/title_activity_registrarse"
+            android:theme="@style/AppThemecolor"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.vista.iucamara.CamaraActivity"
+            android:theme="@style/AppThemecolor"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.SitiosActivity"
+            android:label="@string/title_activity_sitios"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.FavoritosActivity"
+            android:label="@string/title_activity_favoritos"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.PreferenciasActivity"
+            android:label="@string/title_activity_preferencias"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.AcercaZoomActivity"
+            android:label="@string/title_activity_acerca_zoom" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.ContactosActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/title_activity_contactos"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.EventosActivity"
+            android:label="@string/title_activity_eventos"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.zoonv1.FaceActivity"
+            android:label="@string/title_activity_face"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.vista.menuizq.ServicioAyudaActivity"
+            android:label="@string/title_activity_servicio_ayuda"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.zoonv1.RecuperarcontrasenaActivity"
+            android:label="@string/title_activity_recuperarcontrasena"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.LugaresActivity"
+            android:label="@string/title_activity_lugares"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.zoonv1.BuscarContactoActivity"
+            android:label="@string/title_activity_contacto"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.zoonv1.SoliucitudesActivity"
+            android:label="@string/title_activity_soliucitudes"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.menuizq.DetalleContactoActivity"
+            android:label="@string/title_activity_detalle_contacto"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+        <activity
+            android:name="com.vista.menuder.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:theme="@style/AppThemecolor" >
+        </activity>
+    </application>
+
+</manifest>
