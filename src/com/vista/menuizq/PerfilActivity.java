@@ -59,8 +59,8 @@ public class PerfilActivity extends SherlockActivity {
 	private ImageView img_camara;
 	private ImageView img_galeria;
 	private ImageView img_denied;
-	private Button img_dir_trabajo;
-	private Button img_dir_domicilio;
+	// private Button img_dir_trabajo;
+	// private Button img_dir_domicilio;
 	private TextView sexo;
 	private TextView fechanac;
 	static final int DATE_DIALOG_ID = 999;
@@ -113,26 +113,26 @@ public class PerfilActivity extends SherlockActivity {
 				selecttipofoto(IMG_CAMARA);
 			}
 		});
-		img_dir_domicilio = (Button) findViewById(R.id.btndomicilio);
-		img_dir_domicilio.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(getApplicationContext(),
-						LugaresActivity.class);
-				startActivity(intent);
-			}
-		});
-		img_dir_trabajo = (Button) findViewById(R.id.btntrabajo);
-		img_dir_trabajo.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(getApplicationContext(),
-						LugaresActivity.class);
-				startActivity(intent);
-			}
-		});
+		// img_dir_domicilio = (Button) findViewById(R.id.btndomicilio);
+		// img_dir_domicilio.setOnClickListener(new View.OnClickListener() {
+		// @Override
+		// public void onClick(View v) {
+		// // TODO Auto-generated method stub
+		// Intent intent = new Intent(getApplicationContext(),
+		// LugaresActivity.class);
+		// startActivity(intent);
+		// }
+		// });
+		// img_dir_trabajo = (Button) findViewById(R.id.btntrabajo);
+		// img_dir_trabajo.setOnClickListener(new View.OnClickListener() {
+		// @Override
+		// public void onClick(View v) {
+		// // TODO Auto-generated method stub
+		// Intent intent = new Intent(getApplicationContext(),
+		// LugaresActivity.class);
+		// startActivity(intent);
+		// }
+		// });
 		img_galeria = (ImageView) findViewById(R.id.galeria);
 		img_galeria.setOnClickListener(new View.OnClickListener() {
 			@Override

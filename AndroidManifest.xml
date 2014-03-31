@@ -77,49 +77,49 @@
         <activity
             android:name="com.vista.menuizq.PerfilActivity"
             android:label="@string/title_activity_perfil"
-            android:theme="@style/AppThemecolor"
+            android:theme="@style/AppThemecolordrawer"
             android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="com.vista.zoonv1.RegistrarseActivity"
             android:label="@string/title_activity_registrarse"
-            android:theme="@style/AppThemecolor"
+            android:theme="@style/AppThemecolordrawer"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
             android:name="com.vista.iucamara.CamaraActivity"
-            android:theme="@style/AppThemecolor"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.SitiosActivity"
             android:label="@string/title_activity_sitios"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.FavoritosActivity"
             android:label="@string/title_activity_favoritos"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.PreferenciasActivity"
             android:label="@string/title_activity_preferencias"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.AcercaZoomActivity"
-            android:label="@string/title_activity_acerca_zoom" >
+            android:label="@string/title_activity_acerca_zoom"
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.ContactosActivity"
             android:hardwareAccelerated="true"
             android:label="@string/title_activity_contactos"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.EventosActivity"
             android:label="@string/title_activity_eventos"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.zoonv1.FaceActivity"
@@ -132,41 +132,42 @@
         <activity
             android:name="com.vista.menuizq.ServicioAyudaActivity"
             android:label="@string/title_activity_servicio_ayuda"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.zoonv1.RecuperarcontrasenaActivity"
             android:label="@string/title_activity_recuperarcontrasena"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.LugaresActivity"
             android:label="@string/title_activity_lugares"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.zoonv1.BuscarContactoActivity"
             android:label="@string/title_activity_contacto"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.zoonv1.SoliucitudesActivity"
             android:label="@string/title_activity_soliucitudes"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuizq.DetalleContactoActivity"
             android:label="@string/title_activity_detalle_contacto"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.menuder.SearchActivity"
             android:label="@string/title_activity_search"
-            android:theme="@style/AppThemecolor" >
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
             android:name="com.vista.zoonv1.Map_direciones_Activity"
-            android:label="@string/title_activity_map_direciones_" >
+            android:label="@string/title_activity_map_direciones_"
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
     </application>
 

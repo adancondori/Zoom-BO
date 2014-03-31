@@ -278,44 +278,46 @@
                 android:textColorHint="@color/colorhint"
                 android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/btndomicilio"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/redondeado_fondo"
-                android:drawableLeft="@drawable/p_location"
-                android:drawablePadding="5dp"
-                android:ems="10"
-                android:gravity="center_vertical|left"
-                android:hint="@string/title_direccion_domicilio"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:singleLine="true"
-                android:text="@string/title_direccion_domicilio"
-                android:textColor="@color/negro"
-                android:textColorHint="@color/colorhint"
-                android:textSize="18sp" />
+            <!-- <Button -->
+            <!-- android:id="@+id/btndomicilio" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginTop="5dp" -->
+            <!-- android:background="@drawable/redondeado_fondo" -->
+            <!-- android:drawableLeft="@drawable/p_location" -->
+            <!-- android:drawablePadding="5dp" -->
+            <!-- android:ems="10" -->
+            <!-- android:gravity="center_vertical|left" -->
+            <!-- android:hint="@string/title_direccion_domicilio" -->
+            <!-- android:paddingBottom="5dp" -->
+            <!-- android:paddingLeft="5dp" -->
+            <!-- android:paddingTop="5dp" -->
+            <!-- android:singleLine="true" -->
+            <!-- android:text="@string/title_direccion_domicilio" -->
+            <!-- android:textColor="@color/negro" -->
+            <!-- android:textColorHint="@color/colorhint" -->
+            <!-- android:textSize="18sp" /> -->
 
-            <Button
-                android:id="@+id/btntrabajo"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/redondeado_fondo"
-                android:drawableLeft="@drawable/p_location"
-                android:drawablePadding="5dp"
-                android:ems="10"
-                android:gravity="center_vertical|left"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:singleLine="true"
-                android:text="@string/title_direccion_trabajo"
-                android:textColor="@color/negro"
-                android:textColorHint="@color/colorhint"
-                android:textSize="18sp" />
+
+            <!-- <Button -->
+            <!-- android:id="@+id/btntrabajo" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginTop="5dp" -->
+            <!-- android:background="@drawable/redondeado_fondo" -->
+            <!-- android:drawableLeft="@drawable/p_location" -->
+            <!-- android:drawablePadding="5dp" -->
+            <!-- android:ems="10" -->
+            <!-- android:gravity="center_vertical|left" -->
+            <!-- android:paddingBottom="5dp" -->
+            <!-- android:paddingLeft="5dp" -->
+            <!-- android:paddingTop="5dp" -->
+            <!-- android:singleLine="true" -->
+            <!-- android:text="@string/title_direccion_trabajo" -->
+            <!-- android:textColor="@color/negro" -->
+            <!-- android:textColorHint="@color/colorhint" -->
+            <!-- android:textSize="18sp" /> -->
+
 
             <!-- <RelativeLayout -->
             <!-- android:layout_width="match_parent" -->
@@ -378,9 +380,10 @@
                 android:id="@+id/vacio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:text=""
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="10dp" />
 
             <Button
                 android:id="@+id/guardar"

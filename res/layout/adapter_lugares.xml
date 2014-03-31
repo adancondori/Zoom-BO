@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@color/background_listview" >
 
-    <TextView
-        android:id="@+id/txt_detalle"
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/redondeado_fondo"
-        android:drawableLeft="@drawable/p_location"
-        android:drawablePadding="5dp"
-        android:ems="10"
         android:gravity="center_vertical|left"
-        android:hint="@string/title_direccion_domicilio"
-        android:paddingBottom="5dp"
+        android:orientation="vertical"
         android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:singleLine="true"
-        android:text="@string/title_direccion_domicilio"
-        android:textColor="@color/negro"
-        android:textColorHint="@color/colorhint"
-        android:textSize="18sp" />
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/txt_etiqueta"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Nombre"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/colorhint"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_detalle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/p_location"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:gravity="center_vertical|left"
+            android:hint="@string/title_direccion_domicilio"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:text="@string/title_direccion_domicilio"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/colorhint"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 </RelativeLayout>

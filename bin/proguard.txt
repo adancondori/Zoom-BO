@@ -75,7 +75,7 @@
 -keep class com.facebook.widget.LoginButton { <init>(...); }
 
 # view res/layout/activity_detalle_contacto.xml #generated:8
-# view res/layout/activity_map_direciones_.xml #generated:11
+# view res/layout/activity_map_direciones_.xml #generated:13
 # view res/layout/fragment_home.xml #generated:29
 # view res/layout/fragment_map.xml #generated:8
 -keep class com.google.android.gms.maps.SupportMapFragment { <init>(...); }
@@ -97,7 +97,7 @@
 # view AndroidManifest.xml #generated:162
 -keep class com.vista.menuder.SearchActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:109
+# view AndroidManifest.xml #generated:108
 -keep class com.vista.menuizq.AcercaZoomActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:113
@@ -109,7 +109,7 @@
 # view AndroidManifest.xml #generated:119
 -keep class com.vista.menuizq.EventosActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:99
+# view AndroidManifest.xml #generated:98
 -keep class com.vista.menuizq.FavoritosActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:142
@@ -118,13 +118,13 @@
 # view AndroidManifest.xml #generated:77
 -keep class com.vista.menuizq.PerfilActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:104
+# view AndroidManifest.xml #generated:103
 -keep class com.vista.menuizq.PreferenciasActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:132
 -keep class com.vista.menuizq.ServicioAyudaActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:94
+# view AndroidManifest.xml #generated:93
 -keep class com.vista.menuizq.SitiosActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:147

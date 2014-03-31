@@ -1,8 +1,13 @@
 package com.vista.menuizq;
 
+import java.util.ArrayList;
+
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,8 +15,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,7 +39,6 @@ import com.vista.adapter.Adapter_Lugares;
 import com.vista.dato.Lugares;
 import com.vista.util.Utils;
 import com.vista.zoonv1.LugaresFragmentComent;
-import com.vista.zoonv1.MapFragment;
 import com.vista.zoonv1.Map_direciones_Activity;
 import com.vista.zoonv1.R;
 
@@ -108,17 +115,11 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 			long arg3) {
-		Toast.makeText(
-				getApplicationContext(),
-				"Item " + position
-						+ "   Info Systema: hacer una ventava con el mapa!!! ",
-				Toast.LENGTH_SHORT).show();
-
+		selectionsexo();
 	}
 
 	public void dialog_direccion() {
 		// get prompts.xml view
-
 		LayoutInflater li = LayoutInflater.from(this);
 		View promptsView = li
 				.inflate(R.layout.layout_agregar_direcciones, null);
@@ -133,24 +134,26 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 		// final TextView nombre = (TextView) promptsView
 		// .findViewById(R.id.txt_nombre);
 
-		Fragment content_frame = new MapFragment();
-		FragmentManager fm = getSupportFragmentManager();
-		FragmentTransaction ft = fm.beginTransaction();
-		ft.replace(R.id.content_frame_map, content_frame);
-		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-		ft.commit();
+		// Fragment content_frame = new MapFragment();
+		// FragmentManager fm = getSupportFragmentManager();
+		// FragmentTransaction ft = fm.beginTransaction();
+		// ft.replace(R.id.content_frame_map, content_frame);
+		// ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+		// ft.commit();
 		// set dialog message
 
 		alertDialogBuilder
 				.setCancelable(false)
-				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int id) {
-						// ///////////
-						Toast.makeText(getApplicationContext(),
-								"colocar mas datos", Toast.LENGTH_SHORT).show();
-						dialog.dismiss();
-					}
-				})
+				.setPositiveButton("Aceptar",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// ///////////
+								Toast.makeText(getApplicationContext(),
+										"colocar mas datos", Toast.LENGTH_SHORT)
+										.show();
+								dialog.dismiss();
+							}
+						})
 				.setNegativeButton("Cancel",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
@@ -165,11 +168,60 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 		alertDialog.show();
 	}
 
+	public void selectionsexo() {
+		ListView modeList = new ListView(this);
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("Ver");
+		list.add("Modificar");
+		list.add("Compartir");
+		list.add("Eliminar");
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		// builder.setTitle("Definir Foto de Perfil");
+
+		// ListView modeList = new ListView(context);
+		modeList.setBackgroundColor(Color.WHITE);
+		ArrayAdapter<String> modeAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, android.R.id.text1, list);
+
+		modeList.setAdapter(modeAdapter);
+
+		builder.setView(modeList);
+		final Dialog dialog = builder.create();
+		// dialog.setTitle("Sexo (Género)");
+		modeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+				// if (position != 0) {
+				switch (position) {
+				case 0:
+					// sexo.setText("-");
+					break;
+				case 1:
+					// sexo.setText("Hombre");
+					break;
+				case 2:
+					// sexo.setText("Mujer");
+					break;
+				case 3:
+					// sexo.setText("Mujer");
+					break;
+				}
+
+				dialog.dismiss();
+				// }
+			}
+		});
+		dialog.show();
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		SubMenu subMenu = menu.addSubMenu(Menu.NONE, R.id.menu_categoria,
 				Menu.NONE, "");
-		subMenu.setIcon(R.drawable.p_briefcase);
+		subMenu.setIcon(R.drawable.more50);
 		MenuItem subMenu1Item = subMenu.getItem();
 		subMenu1Item.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
 				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
@@ -177,4 +229,17 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 		return true;
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		System.out.println("adan onresulto");
+		if (resultCode == RESULT_OK) {
+			Bundle ext = data.getExtras();
+			String nombre = ext.getString("nombre");
+			String etiqueta = ext.getString("etiqueta");
+			addlugares(nombre);
+		} else if (resultCode == 3) {
+
+		}
+	}
 }

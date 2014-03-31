@@ -37,7 +37,7 @@
     <string name="title_detalle_contacto">Detalle de Contacto</string>
     <string name="title_activity_servicio_ayuda">Servicio Ayuda</string>
     <string name="title_activity_recuperarcontrasena">Recuperar Contrasena</string>
-    <string name="title_activity_lugares">Mis Lugares</string>
+    <string name="title_activity_lugares">Mis Direcciones</string>
     <string name="title_informacion">Información</string>
     <string name="title_recuperarcontracena_msj_envio">Mensaje fue enviado exitosamente.\nVerifíque su correo Electrónico</string>
     <string name="title_recuperarcontracena_msj_no_envio">Mensaje no fue enviado exitosamente.\nVerifíque su correo Electrónico</string>
@@ -75,6 +75,6 @@
     <string name="fragment_example_">Fragment example >></string>
     <string name="publish_photo">Publish photo</string>
     <string name="get_albums">Get albums</string>
-    <string name="title_activity_map_direciones_">Map_direciones_Activity</string>
+    <string name="title_activity_map_direciones_">Nueva Dirección</string>
 
 </resources>
