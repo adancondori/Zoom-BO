@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/content_frame_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/txt_etiqueta"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_titulo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/redondeado"
+        android:drawableLeft="@drawable/p_profle"
+        android:drawablePadding="5dp"
+        android:ems="50"
+        android:hint="Etiqueta"
+        android:inputType="textCapWords"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:singleLine="true"
+        android:textColor="@color/negro"
+        android:textColorHint="@color/colorhint"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txt_titulo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_etiqueta"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/redondeado"
+        android:drawableLeft="@drawable/p_profle"
+        android:drawablePadding="5dp"
+        android:ems="50"
+        android:hint="Nombre"
+        android:inputType="textCapWords"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:singleLine="true"
+        android:textColor="@color/negro"
+        android:textColorHint="@color/colorhint"
+        android:textSize="18sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <ImageView
+        android:id="@+id/imglocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map_direcciones"
+        android:layout_alignRight="@+id/map_direcciones"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/img_selector"
+        android:contentDescription="@string/title_content_imagendescripcion"
+        android:src="@drawable/focus" />
+
+</RelativeLayout>

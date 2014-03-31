@@ -87,7 +87,7 @@ public class MenuDERFragment extends Fragment {
 				return new EventoFragment();
 		}
 		// else {
-		// return new AvisosFragment();
+		// return new onlyMap();
 		// }
 		// }
 	}

@@ -75,5 +75,6 @@
     <string name="fragment_example_">Fragment example >></string>
     <string name="publish_photo">Publish photo</string>
     <string name="get_albums">Get albums</string>
+    <string name="title_activity_map_direciones_">Map_direciones_Activity</string>
 
 </resources>

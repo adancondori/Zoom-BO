@@ -164,6 +164,10 @@
             android:label="@string/title_activity_search"
             android:theme="@style/AppThemecolor" >
         </activity>
+        <activity
+            android:name="com.vista.zoonv1.Map_direciones_Activity"
+            android:label="@string/title_activity_map_direciones_" >
+        </activity>
     </application>
 
 </manifest>

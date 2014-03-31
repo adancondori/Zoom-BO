@@ -75,7 +75,9 @@
 -keep class com.facebook.widget.LoginButton { <init>(...); }
 
 # view res/layout/activity_detalle_contacto.xml #generated:8
+# view res/layout/activity_map_direciones_.xml #generated:11
 # view res/layout/fragment_home.xml #generated:29
+# view res/layout/fragment_map.xml #generated:8
 -keep class com.google.android.gms.maps.SupportMapFragment { <init>(...); }
 
 # view res/layout/fragment_event.xml #generated:2
@@ -133,6 +135,9 @@
 
 # view AndroidManifest.xml #generated:62
 -keep class com.vista.zoonv1.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:167
+-keep class com.vista.zoonv1.Map_direciones_Activity { <init>(...); }
 
 # view AndroidManifest.xml #generated:43
 -keep class com.vista.zoonv1.MyApliccion { <init>(...); }
