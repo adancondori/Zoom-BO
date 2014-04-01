@@ -8,7 +8,7 @@
         android:id="@+id/map_direcciones_rela"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/txt_etiqueta_direcciones" >
+        android:layout_above="@+id/txt_titulo_direcciones" >
 
         <fragment
             android:id="@+id/map_direcciones"
@@ -49,10 +49,21 @@
             android:background="@drawable/img_selector"
             android:contentDescription="@string/title_content_imagendescripcion"
             android:src="@drawable/mapas" />
+
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_tipo_mapas"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@+id/img_tipo_mapas"
+            android:background="@drawable/img_selector"
+            android:contentDescription="@string/title_content_imagendescripcion"
+            android:src="@drawable/bus" />
     </RelativeLayout>
 
     <EditText
-        android:id="@+id/txt_etiqueta_direcciones"
+        android:id="@+id/txt_titulo_direcciones"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/txt_nombre_direcciones"
@@ -62,7 +73,7 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/redondeado"
-        android:drawableLeft="@drawable/p_profle"
+        android:drawableLeft="@drawable/p_editar"
         android:drawablePadding="5dp"
         android:ems="50"
         android:hint="Nombre"
@@ -98,10 +109,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btn_guardar_direcciones"
-        android:layout_alignLeft="@+id/txt_etiqueta_direcciones"
-        android:layout_alignRight="@+id/txt_etiqueta_direcciones"
+        android:layout_alignLeft="@+id/txt_titulo_direcciones"
+        android:layout_alignRight="@+id/txt_titulo_direcciones"
         android:background="@drawable/redondeado"
-        android:drawableLeft="@drawable/p_profle"
+        android:drawableLeft="@drawable/p_rutas"
         android:drawablePadding="5dp"
         android:ems="50"
         android:hint="Dirección"

@@ -17,7 +17,7 @@
         android:paddingTop="5dp" >
 
         <TextView
-            android:id="@+id/txt_etiqueta"
+            android:id="@+id/txt_titulo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -27,7 +27,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/txt_detalle"
+            android:id="@+id/txt_direccion"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/p_location"

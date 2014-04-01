@@ -81,9 +81,13 @@ public class Adapter_Lugares extends BaseAdapter {
 			switch (type) {
 			case TYPE_ITEM:
 				convertView = mInflater.inflate(R.layout.adapter_lugares, null);
-				holder.txt_texto = (TextView) convertView
-						.findViewById(R.id.txt_detalle);
-				holder.txt_texto.setText(mData.get(position).getCad());
+				holder.txt_titulo = (TextView) convertView
+						.findViewById(R.id.txt_titulo);
+				holder.txt_titulo.setText(mData.get(position).getTitulo());
+				holder.txt_direccion = (TextView) convertView
+						.findViewById(R.id.txt_direccion);
+				holder.txt_direccion
+						.setText(mData.get(position).getDireccion());
 
 				break;
 			case TYPE_SEPARATOR:
@@ -96,12 +100,30 @@ public class Adapter_Lugares extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		holder.txt_texto.setText(mData.get(position).getCad());
+		holder.txt_titulo.setText(mData.get(position).getTitulo());
+		holder.txt_direccion.setText(mData.get(position).getDireccion());
 		return convertView;
 	}
 
+	public void remover_item(int pos) {
+		mData.remove(pos);
+		notifyDataSetChanged();
+	}
+
+	public void remover_item_object(Lugares lugares) {
+		mData.remove(lugares);
+		notifyDataSetChanged();
+	}
+
+	public void modificar_lugares(Lugares lugares, Lugares newlugares) {
+		mData.remove(lugares);
+		mData.add(newlugares);
+		notifyDataSetChanged();
+	}
+
 	public static class ViewHolder {
-		public TextView txt_texto;
+		public TextView txt_titulo;
+		public TextView txt_direccion;
 
 	}
 }

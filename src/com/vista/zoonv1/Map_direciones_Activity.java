@@ -13,6 +13,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.vista.GPSsingleton.GPS;
+import com.vista.dato.Lugares;
+import com.vista.menuizq.LugaresActivity;
 import com.vista.menuizq.PerfilActivity;
 import com.vista.util.Utils;
 
@@ -30,14 +32,16 @@ import android.widget.Toast;
 public class Map_direciones_Activity extends SherlockFragmentActivity {
 	SupportMapFragment mapFragment;
 	GoogleMap map;
-	TextView txt_etiqueta;
-	TextView txt_nombre;
+	TextView txt_titulo;
+	TextView txt_direccion;
 	Button btn_guardar;
 	ImageView img_tipo_mapas;
 	ImageView img_acetar_latlong;
 	boolean sw = true;
 	boolean sw_location = true;
 	LatLng latLngCurrent = null;
+	public Lugares LUGARES;
+	private int TIPO = -1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,41 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 		IU_initilize();
 		getSupportActionBar().show();
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		if (getIntent().getExtras() != null) {
+			if (getIntent().getExtras().containsKey("LUGARES_VER")) {
+				LUGARES = (Lugares) getIntent().getExtras().getSerializable(
+						"LUGARES_VER");
+				rellenar();
+				btn_guardar.setVisibility(View.INVISIBLE);
+				TIPO = LugaresActivity.DIR_VER;
+			} else if (getIntent().getExtras().containsKey("LUGARES_MODIFICAR")) {
+				LUGARES = (Lugares) getIntent().getExtras().getSerializable(
+						"LUGARES_MODIFICAR");
+				rellenar();
+				TIPO = LugaresActivity.DIR_MODIFICAR;
+			} else {
+				TIPO = LugaresActivity.DIR_NUEVO;
+				LUGARES = new Lugares();
+			}
+		} else {
+			TIPO = LugaresActivity.DIR_NUEVO;
+			LUGARES = new Lugares();
+		}
+	}
+
+	public void rellenar() {
+		if (LUGARES != null) {
+			txt_direccion.setText(LUGARES.getDireccion());
+			txt_titulo.setText(LUGARES.getTitulo());
+			latLngCurrent = new LatLng(LUGARES.getLatitud(),
+					LUGARES.getLongitud());
+			AddMarket(latLngCurrent);
+			CameraPosition camPos = new CameraPosition.Builder()
+					.target(latLngCurrent).zoom(18).bearing(45).build();
+			CameraUpdate camUpd3 = CameraUpdateFactory
+					.newCameraPosition(camPos);
+			map.animateCamera(camUpd3);
+		}
 	}
 
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -55,19 +94,17 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 		case android.R.id.home:
 			finish();
 			break;
-
 		}
 		return true;
 	}
 
 	private void IU_initilize() {
-		txt_etiqueta = (TextView) findViewById(R.id.txt_etiqueta_direcciones);
+		txt_titulo = (TextView) findViewById(R.id.txt_titulo_direcciones);
 		img_tipo_mapas = (ImageView) findViewById(R.id.img_tipo_mapas);
 		img_tipo_mapas.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				if (sw) {
 					img_tipo_mapas.setImageResource(R.drawable.uv_barrios);
 					map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
@@ -86,35 +123,63 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 				txt_habilitar_ping();
 			}
 		});
-		txt_nombre = (TextView) findViewById(R.id.txt_nombre_direcciones);
+		txt_direccion = (TextView) findViewById(R.id.txt_nombre_direcciones);
 		btn_guardar = (Button) findViewById(R.id.btn_guardar_direcciones);
 		btn_guardar.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent();
-				Bundle extras = new Bundle();
-				extras.putString("nombre", txt_nombre.getText().toString()
-						.trim());
-				extras.putString("etiqueta", txt_etiqueta.getText().toString()
-						.trim());
-				intent.putExtras(extras);
-				//
-				// setResult(RESULT_OK, intent);
-				// Intent data = new Intent();
-				// intent.putExtra("Latitude", 45);
-				// intent.putExtra("Longitude", 45);
-				if (getParent() == null) {
-					setResult(Activity.RESULT_OK, intent);
-				} else {
-					getParent().setResult(Activity.RESULT_OK, intent);
-				}
-				// startActivityForResult(intent, RESULT_OK);
-				finish();
+				finalizar_actividad();
 			}
 		});
 
+	}
+
+	public void finalizar_actividad() {
+		switch (TIPO) {
+		case LugaresActivity.DIR_MODIFICAR:
+			LUGARES.setDireccion(txt_direccion.getText().toString());
+			LUGARES.setTitulo(txt_titulo.getText().toString());
+			LUGARES.setLatitud(latLngCurrent.latitude);
+			LUGARES.setLongitud(latLngCurrent.longitude);
+			Intent intent_mod = new Intent();
+			Bundle extras_mod = new Bundle();
+			extras_mod.putSerializable("DIR_MODIFICAR", LUGARES);
+			intent_mod.putExtras(extras_mod);
+
+			if (getParent() == null) {
+				setResult(TIPO, intent_mod);
+			} else {
+				getParent().setResult(TIPO, intent_mod);
+			}
+			break;
+		case LugaresActivity.DIR_VER:
+
+			break;
+		case LugaresActivity.DIR_NUEVO:
+			LUGARES = new Lugares();
+			LUGARES.setDireccion(txt_direccion.getText().toString());
+			LUGARES.setTitulo(txt_titulo.getText().toString());
+			LUGARES.setLatitud(latLngCurrent.latitude);
+			LUGARES.setLongitud(latLngCurrent.longitude);
+			Intent intent = new Intent();
+			Bundle extras = new Bundle();
+			extras.putSerializable("DIR_NUEVO", LUGARES);
+			intent.putExtras(extras);
+
+			if (getParent() == null) {
+				setResult(TIPO, intent);
+			} else {
+				getParent().setResult(TIPO, intent);
+			}
+			finish();
+			break;
+
+		default:
+			break;
+		}
+		finish();
 	}
 
 	private void initilizeMap() {
@@ -128,26 +193,13 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 
 				@Override
 				public void onCameraChange(CameraPosition arg0) {
-					// TODO Auto-generated method stub
 					CameraPosition camPos = map.getCameraPosition();
 					latLngCurrent = camPos.target;
-					// Toast.makeText(
-					// getApplicationContext(),
-					// "lat: " + String.valueOf(latLngCurrent.latitude)
-					// + "\nlong: "
-					// + String.valueOf(latLngCurrent.longitude),
-					// Toast.LENGTH_SHORT).show();
-
-					// double latitud = coordenadas.latitude;
-					// double longitud = coordenadas.longitude;
 					sw_location = true;
 					img_acetar_latlong.setImageResource(R.drawable.ubicacion);
-					float zoom = camPos.zoom;
-					float orientacion = camPos.bearing;
-					float angulo = camPos.tilt;
+					// map.clear();
 				}
 			});
-			// MyLocationChangeListener(new Myubication());
 			if (map == null) {
 				System.out.println("Mapdirecciones::   Null");
 				Toast.makeText(this, "Sorry! unable to create maps",
@@ -171,7 +223,7 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 	public void AddMarket(LatLng latLng) {
 		map.clear();
 		Marker melbourne = map.addMarker(new MarkerOptions().position(latLng)
-				.title("Pais: Bolivia").snippet("Mi Dettale"));
+				.title("Pais: Bolivia").snippet("Mi ubicacion"));
 
 		map.setOnMarkerClickListener(new OnMarkerClickListener() {
 			public boolean onMarkerClick(Marker marker) {
@@ -182,8 +234,6 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 				return false;
 			}
 		});
-		// map.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
-		// map.moveCamera(CameraUpdateFactory.newLatLngZoom(SantaCruz, 15));
 	}
 
 	public void txt_habilitar_ping() {
@@ -198,15 +248,29 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 
 	public void txt_habilitar() {
 		AddMarket(latLngCurrent);
-		txt_etiqueta.setEnabled(true);
-		txt_etiqueta.setEnabled(true);
+		txt_direccion.setEnabled(true);
+		txt_titulo.setEnabled(true);
 		img_acetar_latlong.setImageResource(R.drawable.ubicacion_location);
 	}
 
 	public void txt_des_habilitar() {
 		map.clear();
-		txt_etiqueta.setEnabled(false);
-		txt_etiqueta.setEnabled(false);
+		txt_direccion.setEnabled(false);
+		txt_titulo.setEnabled(false);
 		img_acetar_latlong.setImageResource(R.drawable.ubicacion);
+	}
+
+	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent();
+		Bundle extras = new Bundle();
+		intent.putExtras(extras);
+
+		if (getParent() == null) {
+			setResult(TIPO, intent);
+		} else {
+			getParent().setResult(TIPO, intent);
+		}
+		finish();
 	}
 }

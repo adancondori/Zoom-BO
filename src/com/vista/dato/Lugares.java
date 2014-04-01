@@ -1,41 +1,29 @@
 package com.vista.dato;
 
-import com.vista.adapter.Adapter_Lugares;
+import java.io.Serializable;
 
-public class Lugares {
+public class Lugares implements Serializable {
 
-	public String cad;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -731331739035340954L;
+	public String titulo;
+	public String direccion;
+	public Double latitud;
+	public Double longitud;
 	public int img_delete;
 	public int img_edit;
 	public int tipo = 0;
 
 	public Lugares() {
 		tipo = 0;
-		cad = "";
+		titulo = "";
 		img_edit = 0;
 		img_delete = 0;
-	}
-
-	public Lugares(int tipo, String cadena, int img_delete, int img_edit) {
-		this.cad = cadena;
-		this.img_delete = img_delete;
-		this.img_edit = img_edit;
-		this.tipo = Adapter_Lugares.TYPE_ITEM;
-	}
-
-	/**
-	 * @return the cad
-	 */
-	public String getCad() {
-		return cad;
-	}
-
-	/**
-	 * @param cad
-	 *            the cad to set
-	 */
-	public void setCad(String cad) {
-		this.cad = cad;
+		direccion = "";
+		latitud = 0.0;
+		longitud = 0.0;
 	}
 
 	/**
@@ -80,6 +68,78 @@ public class Lugares {
 	 *            the tipo to set
 	 */
 	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	/**
+	 * @return the titulo
+	 */
+	public String getTitulo() {
+		return titulo;
+	}
+
+	/**
+	 * @param titulo
+	 *            the titulo to set
+	 */
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	/**
+	 * @return the direccion
+	 */
+	public String getDireccion() {
+		return direccion;
+	}
+
+	/**
+	 * @param direccion
+	 *            the direccion to set
+	 */
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	/**
+	 * @return the latitud
+	 */
+	public Double getLatitud() {
+		return latitud;
+	}
+
+	/**
+	 * @param latitud
+	 *            the latitud to set
+	 */
+	public void setLatitud(Double latitud) {
+		this.latitud = latitud;
+	}
+
+	/**
+	 * @return the longitud
+	 */
+	public Double getLongitud() {
+		return longitud;
+	}
+
+	/**
+	 * @param longitud
+	 *            the longitud to set
+	 */
+	public void setLongitud(Double longitud) {
+		this.longitud = longitud;
+	}
+
+	public Lugares(String titulo, String direccion, Double latitud,
+			Double longitud, int img_delete, int img_edit, int tipo) {
+		super();
+		this.titulo = titulo;
+		this.direccion = direccion;
+		this.latitud = latitud;
+		this.longitud = longitud;
+		this.img_delete = img_delete;
+		this.img_edit = img_edit;
 		this.tipo = tipo;
 	}
 

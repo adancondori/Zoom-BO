@@ -6,35 +6,21 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
 import com.vista.adapter.Adapter_Lugares;
 import com.vista.dato.Lugares;
 import com.vista.util.Utils;
@@ -49,8 +35,10 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 	private ListView listView;
 	private RelativeLayout lyt_relative;
 	public LugaresFragmentComent lugaresFragmentComent;
-
-	// private GoogleMap googleMap;
+	private Lugares LUGARES_ELIMINAR;
+	public final static int DIR_NUEVO = 10;
+	public final static int DIR_MODIFICAR = 11;
+	public final static int DIR_VER = 12;
 
 	public Display display = null;
 
@@ -73,10 +61,10 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 			finish();
 			break;
 		case R.id.menu_categoria:
-			// dialog_direccion();
 			Intent intent = new Intent(getApplicationContext(),
 					Map_direciones_Activity.class);
-			startActivity(intent);
+			startActivityForResult(intent, DIR_NUEVO);
+
 			break;
 		}
 		return true;
@@ -85,10 +73,14 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 	private void IUview() {
 
 		adapter_Lugares = new Adapter_Lugares(getApplicationContext());
-		String[] titles = getResources().getStringArray(R.array.locations);
+		String[] titles = getResources().getStringArray(
+				R.array.locations_lugares_titulo);
+		String[] title_direccion = getResources().getStringArray(
+				R.array.locations_lugares_direccion);
 		for (int i = 0; i < titles.length; i++) {
-			adapter_Lugares.addItem(new Lugares(Adapter_Lugares.TYPE_ITEM,
-					titles[i], 0, 0));
+			Lugares lugares = new Lugares(titles[i], title_direccion[i],
+					-17.4704965, -63.1122724, 0, 0, Adapter_Lugares.TYPE_ITEM);
+			adapter_Lugares.addItem(lugares);
 		}
 		listView = (ListView) findViewById(R.id.lvItems);
 		listView.setAdapter(adapter_Lugares);
@@ -96,9 +88,12 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 		lyt_relative = (RelativeLayout) this.findViewById(R.id.rela);
 	}
 
-	public void addlugares(String nombre) {
-		adapter_Lugares.addItem(new Lugares(Adapter_Lugares.TYPE_ITEM, nombre,
-				0, 0));
+	public void addlugares(Lugares lugares) {
+		adapter_Lugares.addItem(lugares);
+	}
+
+	public void modificarlugares(Lugares lugares) {
+		adapter_Lugares.modificar_lugares(LUGARES_ELIMINAR, lugares);
 	}
 
 	public void agregarMarginlayout(int left, int top, int right, int bottom) {
@@ -115,65 +110,16 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 			long arg3) {
-		selectionsexo();
+		selection_opcion(position);
 	}
 
-	public void dialog_direccion() {
-		// get prompts.xml view
-		LayoutInflater li = LayoutInflater.from(this);
-		View promptsView = li
-				.inflate(R.layout.layout_agregar_direcciones, null);
-		// initilizeMap(promptsView);
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+	public void selection_opcion(final int pos) {
+		LUGARES_ELIMINAR = adapter_Lugares.getItem(pos);
 
-		// set prompts.xml to alertdialog builder
-		alertDialogBuilder.setView(promptsView);
-
-		// final TextView etiqueta = (TextView) promptsView
-		// .findViewById(R.id.txt_etiqueta);
-		// final TextView nombre = (TextView) promptsView
-		// .findViewById(R.id.txt_nombre);
-
-		// Fragment content_frame = new MapFragment();
-		// FragmentManager fm = getSupportFragmentManager();
-		// FragmentTransaction ft = fm.beginTransaction();
-		// ft.replace(R.id.content_frame_map, content_frame);
-		// ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-		// ft.commit();
-		// set dialog message
-
-		alertDialogBuilder
-				.setCancelable(false)
-				.setPositiveButton("Aceptar",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								// ///////////
-								Toast.makeText(getApplicationContext(),
-										"colocar mas datos", Toast.LENGTH_SHORT)
-										.show();
-								dialog.dismiss();
-							}
-						})
-				.setNegativeButton("Cancel",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						});
-
-		// create alert dialog
-		AlertDialog alertDialog = alertDialogBuilder.create();
-
-		// show it
-		alertDialog.show();
-	}
-
-	public void selectionsexo() {
 		ListView modeList = new ListView(this);
 		ArrayList<String> list = new ArrayList<String>();
 		list.add("Ver");
 		list.add("Modificar");
-		list.add("Compartir");
 		list.add("Eliminar");
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -189,24 +135,29 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 		builder.setView(modeList);
 		final Dialog dialog = builder.create();
 		// dialog.setTitle("Sexo (Género)");
+
 		modeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
 				// if (position != 0) {
+
 				switch (position) {
 				case 0:
-					// sexo.setText("-");
+					Intent intent = new Intent(getApplicationContext(),
+							Map_direciones_Activity.class);
+					intent.putExtra("LUGARES_VER", LUGARES_ELIMINAR);
+					startActivityForResult(intent, DIR_VER);
 					break;
 				case 1:
-					// sexo.setText("Hombre");
+					Intent intent_modi = new Intent(getApplicationContext(),
+							Map_direciones_Activity.class);
+					intent_modi.putExtra("LUGARES_MODIFICAR", LUGARES_ELIMINAR);
+					startActivityForResult(intent_modi, DIR_MODIFICAR);
 					break;
 				case 2:
-					// sexo.setText("Mujer");
-					break;
-				case 3:
-					// sexo.setText("Mujer");
+					dialogo_confirmacion(pos);
 					break;
 				}
 
@@ -215,6 +166,38 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 			}
 		});
 		dialog.show();
+	}
+
+	public void dialogo_confirmacion(final int pos) {
+
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+				LugaresActivity.this);
+
+		// Setting Dialog Title
+		// alertDialog.setTitle("Confirma Dirección...");
+
+		// Setting Dialog Message
+		alertDialog.setMessage("Desea eliminar Direción "
+				+ LUGARES_ELIMINAR.getTitulo());
+
+		// Setting Positive "Yes" Button
+		alertDialog.setPositiveButton("SI",
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						adapter_Lugares.remover_item_object(LUGARES_ELIMINAR);
+					}
+				});
+
+		// Setting Negative "NO" Button
+		alertDialog.setNegativeButton("NO",
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+				});
+
+		// Showing Alert Message
+		alertDialog.show();
 	}
 
 	@Override
@@ -231,15 +214,29 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		Bundle ext = data.getExtras();
+		switch (resultCode) {
+		case DIR_NUEVO:
+			if (ext != null && ext.containsKey("DIR_NUEVO")) {
+				LUGARES_ELIMINAR = (Lugares) ext.getSerializable("DIR_NUEVO");
+				LUGARES_ELIMINAR.setTipo(Adapter_Lugares.TYPE_ITEM);
+				addlugares(LUGARES_ELIMINAR);
+			}
+			break;
+		case DIR_MODIFICAR:
+			if (ext != null && ext.containsKey("DIR_MODIFICAR")) {
+				LUGARES_ELIMINAR = (Lugares) ext
+						.getSerializable("DIR_MODIFICAR");
+				LUGARES_ELIMINAR.setTipo(Adapter_Lugares.TYPE_ITEM);
+				modificarlugares(LUGARES_ELIMINAR);
+			}
+			break;
+		case DIR_VER:
 
-		System.out.println("adan onresulto");
-		if (resultCode == RESULT_OK) {
-			Bundle ext = data.getExtras();
-			String nombre = ext.getString("nombre");
-			String etiqueta = ext.getString("etiqueta");
-			addlugares(nombre);
-		} else if (resultCode == 3) {
+			break;
 
+		default:
+			break;
 		}
 	}
 }

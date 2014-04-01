@@ -16,9 +16,13 @@
         <item>Ventas</item>
         <item>Trabajo</item>
     </string-array>
-    <string-array name="locations">
+    <string-array name="locations_lugares_titulo">
         <item>Mi casa</item>
         <item>Mi trabajo</item>
+    </string-array>
+    <string-array name="locations_lugares_direccion">
+        <item>B/ Los Lotes</item>
+        <item>Av/ Mutualista</item>
     </string-array>
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
