@@ -163,14 +163,7 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 				map.setMyLocationEnabled(true);
 				map.getUiSettings().setMyLocationButtonEnabled(true);
 				map.getUiSettings().setZoomControlsEnabled(false);
-				// map.setOnMapClickListener(new GoogleMap.OnMapClickListener()
-				// {
-				// @Override
-				// public void onMapClick(LatLng arg0) {
-				// // getBarriosWeb(String.valueOf(arg0.latitude) + ":"
-				// // + String.valueOf(arg0.longitude));imglocation
-				// }
-				// });
+
 			}
 		}
 	}
@@ -179,9 +172,6 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 		map.clear();
 		Marker melbourne = map.addMarker(new MarkerOptions().position(latLng)
 				.title("Pais: Bolivia").snippet("Mi Dettale"));
-		// .icon(BitmapDescriptorFactory.fromResource(R.drawable.menos)));//cambia
-		// de icono
-		// melbourne.showInfoWindow(); //para mostrar la info del marcador
 
 		map.setOnMarkerClickListener(new OnMarkerClickListener() {
 			public boolean onMarkerClick(Marker marker) {
