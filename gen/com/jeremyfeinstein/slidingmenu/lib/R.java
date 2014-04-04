@@ -32,7 +32,7 @@ public final class R {
 		public static final int slidingmenumain = 0x7f06012b;
 	}
 	public static final class layout {
-		public static final int slidingmenumain = 0x7f030061;
+		public static final int slidingmenumain = 0x7f030062;
 	}
 	public static final class styleable {
 		public static final int[] SlidingMenu = { 0x7f010018, 0x7f010019, 0x7f01001a, 0x7f01001b, 0x7f01001c, 0x7f01001d, 0x7f01001e, 0x7f01001f, 0x7f010020, 0x7f010021, 0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025 };

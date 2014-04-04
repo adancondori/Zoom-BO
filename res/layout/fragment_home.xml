@@ -76,23 +76,24 @@
                 android:background="@drawable/img_selector"
                 android:src="@drawable/mapas" />
 
+            <!-- <TextView -->
+            <!-- android:id="@+id/imgaltitude" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_below="@+id/imgspeed" -->
+            <!-- android:layout_centerHorizontal="true" -->
+            <!-- android:background="@drawable/counter_bg" -->
+            <!-- android:text="0.0" -->
+            <!-- android:textAppearance="?android:attr/textAppearanceSmall" -->
+            <!-- android:textColor="#E32636" /> -->
+
             <TextView
                 android:id="@+id/imgspeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignTop="@+id/imgzoom2"
-                android:background="@drawable/counter_bg"
-                android:text="0.0"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#E32636" />
-
-            <TextView
-                android:id="@+id/imgaltitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/imgspeed"
+                android:layout_alignParentTop="true"
+                android:layout_alignTop="@+id/imglocation"
+                android:layout_centerHorizontal="true"
                 android:background="@drawable/counter_bg"
                 android:text="0.0"
                 android:textAppearance="?android:attr/textAppearanceSmall"

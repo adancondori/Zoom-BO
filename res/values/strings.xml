@@ -43,7 +43,7 @@
     <string name="title_recuperarcontracena_msj_no_envio">Mensaje no fue enviado exitosamente.\nVerifíque su correo Electrónico</string>
     <string name="title_activity_contacto">Buscar Contactos</string>
     <string name="title_activity_soliucitudes">Mis Solicitudes</string>
-    <string name="title_activity_detalle_contacto">DetalleContactoActivity</string>
+    <string name="title_activity_detalle_contacto">Detalle de Contacto</string>
     <string name="title_categorias">Categorias</string>
     <string name="title_activity_search">Busqueda</string>
     <string name="title_filtrar">Herramienta de Busqueda</string>

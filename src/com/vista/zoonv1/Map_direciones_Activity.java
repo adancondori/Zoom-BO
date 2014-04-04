@@ -19,6 +19,8 @@ import com.vista.menuizq.PerfilActivity;
 import com.vista.util.Utils;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.location.Location;
@@ -81,7 +83,7 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 					LUGARES.getLongitud());
 			AddMarket(latLngCurrent);
 			CameraPosition camPos = new CameraPosition.Builder()
-					.target(latLngCurrent).zoom(18).bearing(45).build();
+					.target(latLngCurrent).zoom(15).bearing(45).build();
 			CameraUpdate camUpd3 = CameraUpdateFactory
 					.newCameraPosition(camPos);
 			map.animateCamera(camUpd3);
@@ -92,6 +94,15 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 		int itemId = item.getItemId();
 		switch (itemId) {
 		case android.R.id.home:
+			Intent intent = new Intent();
+			Bundle extras = new Bundle();
+			intent.putExtras(extras);
+			TIPO = LugaresActivity.DIR_VER;
+			if (getParent() == null) {
+				setResult(TIPO, intent);
+			} else {
+				getParent().setResult(TIPO, intent);
+			}
 			finish();
 			break;
 		}
@@ -137,6 +148,11 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 	}
 
 	public void finalizar_actividad() {
+		if (txt_direccion.getText().toString().trim().equals("")
+				|| txt_titulo.getText().toString().trim().equals("")) {
+			dialogo_confirmacion("El nombre o direccion esta en Blanco!!.  Introdusca Datos...");
+			return;
+		}
 		switch (TIPO) {
 		case LugaresActivity.DIR_MODIFICAR:
 			LUGARES.setDireccion(txt_direccion.getText().toString());
@@ -173,7 +189,6 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 			} else {
 				getParent().setResult(TIPO, intent);
 			}
-			finish();
 			break;
 
 		default:
@@ -207,7 +222,7 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 			} else {
 				LatLng SantaCruz = new LatLng(-17.39379, -66.156972);
 				CameraPosition camPos = new CameraPosition.Builder()
-						.target(SantaCruz).zoom(18).bearing(45).build();
+						.target(SantaCruz).zoom(15).bearing(45).build();
 
 				CameraUpdate camUpd3 = CameraUpdateFactory
 						.newCameraPosition(camPos);
@@ -258,6 +273,28 @@ public class Map_direciones_Activity extends SherlockFragmentActivity {
 		txt_direccion.setEnabled(false);
 		txt_titulo.setEnabled(false);
 		img_acetar_latlong.setImageResource(R.drawable.ubicacion);
+	}
+
+	public void dialogo_confirmacion(String cad) {
+
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+				Map_direciones_Activity.this);
+
+		// Setting Dialog Title
+		// alertDialog.setTitle("Confirma Dirección...");
+
+		// Setting Dialog Message
+		alertDialog.setMessage(cad);
+
+		// Setting Positive "Yes" Button
+		alertDialog.setPositiveButton("SI",
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+				});
+		// Showing Alert Message
+		alertDialog.show();
 	}
 
 	@Override

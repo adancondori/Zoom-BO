@@ -11,6 +11,7 @@ import com.actionbarsherlock.widget.SearchView;
 import com.actionbarsherlock.widget.SearchView.OnQueryTextListener;
 import com.actionbarsherlock.widget.SearchView.OnSuggestionListener;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.vista.GPSsingleton.GPS;
 import com.vista.GPSsingleton.Pedido_Singleton;
 import com.vista.menuder.MenuDERFragment;
 
@@ -424,6 +425,18 @@ public class MainActivity extends BaseActivity implements OnQueryTextListener,
 	public void showbar() {
 		getSupportActionBar().show();
 	}
-	// --------------End Metodos-------------------------------------------
 
+	// --------------End Metodos-------------------------------------------
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		GPS.getInstance().setCurrentubication(false);
+		super.onStop();
+	}
 }

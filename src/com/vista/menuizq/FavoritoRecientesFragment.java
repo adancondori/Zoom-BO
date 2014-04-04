@@ -60,7 +60,7 @@ public class FavoritoRecientesFragment extends Fragment {
 			String aux[] = navMenuTitles[i].split(":");
 			switch (Integer.valueOf(aux[0])) {
 			// case AdapterPerfil.TYPE_PERFIL:
-			// drawerListAdapter.addSeparatorItem(new NavDrawerItem(aux[1],
+			// drawerListAdapter.addSeparatorItem(new Contacto(aux[1],
 			// navMenuIcons.getResourceId(i, -1)),
 			// AdapterPerfil.TYPE_PERFIL);
 			// break;

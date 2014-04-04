@@ -140,7 +140,7 @@ public class HomeFragment extends Fragment {
 		this.rootView = this.inflater.inflate(R.layout.fragment_home,
 
 		container, false);
-
+		// imgaltitude
 		clickmiubicacion();
 
 		inicializarcomponentes();
@@ -157,7 +157,7 @@ public class HomeFragment extends Fragment {
 				.findViewById(R.id._categoria_expandableListV);
 		IU_expandableListView();
 		// crearSearch();
-		
+
 		return rootView;
 	}
 
@@ -249,7 +249,7 @@ public class HomeFragment extends Fragment {
 	// ///////////////////////////////////
 	// public void visibleproiedades() {
 	// if (visible) {
-	// ocultartool();
+	// ocultartool(); imgspeed
 	// } else {
 	// mostrartool();
 	// }
@@ -266,15 +266,16 @@ public class HomeFragment extends Fragment {
 	ImageView imglocation;
 	// ImageView imgtrack;
 	// ImageView imgposalt;
-	TextView imgaltitude;
+	// TextView imgaltitude;
 	TextView imgspeed;
 	// ImageView home;
 	// ImageView faceuploadscreem;
 	// ImageView barrio;
 	ImageView _img_categoria;
 	ImageView _img_expandalble;
+
 	//
-//	SearchView searchView;
+	// SearchView searchView;
 
 	// RelativeLayout relativeLayout;
 
@@ -414,8 +415,8 @@ public class HomeFragment extends Fragment {
 		});
 
 		imgspeed = (TextView) rootView.findViewById(R.id.imgspeed);
-		imgaltitude = (TextView) rootView.findViewById(R.id.imgaltitude);
-		imgaltitude.setVisibility(View.INVISIBLE);
+		// imgaltitude = (TextView) rootView.findViewById(R.id.imgaltitude);
+		// imgaltitude.setVisibility(View.INVISIBLE);
 		imgspeed.setVisibility(View.INVISIBLE);
 
 		_img_categoria = (ImageView) rootView
@@ -777,12 +778,12 @@ public class HomeFragment extends Fragment {
 				// GETACTIVITY().GETAPPLICATIONCONTEXT(),
 				// R.ANIM.SLIDELAYOUT_SEARCH_RIGHT);
 				// RELATIVELAYOUT.SETANIMATION(ANIMATION2);
-//				searchView.setVisibility(View.INVISIBLE);
+				// searchView.setVisibility(View.INVISIBLE);
 				// searchView.onActionViewCollapsed();
 				animation = AnimationUtils.loadAnimation(getActivity()
 						.getApplicationContext(), R.anim.slidelayout_right);
 				_ISCollapce_Animation = false;
-//				searchView.setVisibility(View.INVISIBLE);
+				// searchView.setVisibility(View.INVISIBLE);
 			}
 			break;
 		case _UN_CUARTOS:
@@ -808,7 +809,7 @@ public class HomeFragment extends Fragment {
 				// getActivity().getApplicationContext(),
 				// R.anim.slidelayout_search);
 
-//				searchView.setVisibility(View.VISIBLE);
+				// searchView.setVisibility(View.VISIBLE);
 				// relativeLayout.setAnimation(animation2);
 				// puente.sendMessage(new Message());
 
@@ -1047,7 +1048,7 @@ public class HomeFragment extends Fragment {
 					show_velocidad_altitud();
 				}
 			} else {
-				imgaltitude.setVisibility(View.INVISIBLE);
+				// imgaltitude.setVisibility(View.INVISIBLE);
 				imgspeed.setVisibility(View.INVISIBLE);
 			}
 		}
@@ -1056,19 +1057,35 @@ public class HomeFragment extends Fragment {
 
 	public void show_velocidad_altitud() {
 
-		imgaltitude.setVisibility(View.VISIBLE);
-		imgspeed.setVisibility(View.VISIBLE);
-		if (((map.getMyLocation().getAltitude() != 0.0) || (map.getMyLocation()
-				.getSpeed() != 0.0))) {
-			imgaltitude.setText("h= "
-					+ String.valueOf((int) map.getMyLocation().getAltitude())
-					+ " m");
-			float d = map.getMyLocation().getSpeed();
+		// imgaltitude.setVisibility(View.VISIBLE);
 
-			DecimalFormat df = new DecimalFormat("###.##");
-			System.out.print(df.format((double) d));
-			imgspeed.setText("V= "
-					+ String.valueOf(df.format((double) (d * 3.6))) + " KPH");
+		if (map != null
+				&& ((map.getMyLocation().getAltitude() != 0.0) || (map
+						.getMyLocation().getSpeed() != 0.0))) {
+			imgspeed.setVisibility(View.VISIBLE);
+			// *-- speed
+			float d = map.getMyLocation().getSpeed();
+			DecimalFormat df = new DecimalFormat("###");
+			String res = String.valueOf(df.format((double) (d * 3.6)));
+			String speed = "";
+			if ((d * 3.6) >= 1) {
+				speed = "V= " + res + " km/h" + " · ";
+			}
+			// *--- altitud
+			String altitud = "h= "
+					+ String.valueOf((int) map.getMyLocation().getAltitude())
+					+ " m";
+
+			// imgaltitude.setText("h= "
+			// + String.valueOf((int) map.getMyLocation().getAltitude())
+			// + " m");
+
+			// System.out.print(df.format((double) d));
+			// imgspeed.setText("V= "
+			// + String.valueOf(df.format((double) (d * 3.6))) + " KPH");
+			imgspeed.setText(speed + altitud);
+		} else {
+
 		}
 	}
 

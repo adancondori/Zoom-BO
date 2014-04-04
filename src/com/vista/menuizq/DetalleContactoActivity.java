@@ -8,26 +8,47 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.vista.dato.Contacto;
 import com.vista.zoonv1.R;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DetalleContactoActivity extends SherlockFragmentActivity {
 	GoogleMap map;
+	Contacto contacto;
+	TextView txt_nombre_contacto;
+	TextView txt_telefono_contacto;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		if (getIntent().getExtras().containsKey("dato")) {
-			setTitle(getIntent().getExtras().getString("dato"));
-		}
 
 		setContentView(R.layout.activity_detalle_contacto);
 		initilizeMap();
+		IU_iniciar();
+		if (getIntent().getExtras() != null
+				&& getIntent().getExtras().containsKey("CONTACTO")) {
+			contacto = (Contacto) getIntent().getExtras().getSerializable(
+					"CONTACTO");
+			rellenar_datos();
+
+		}
 		getSupportActionBar().show();
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	}
+
+	private void IU_iniciar() {
+		txt_nombre_contacto = (TextView) findViewById(R.id.txt_nombre_contacto);
+		txt_telefono_contacto = (TextView) findViewById(R.id.txt_telefono_contacto);
+	}
+
+	public void rellenar_datos() {
+		txt_nombre_contacto.setText(contacto.getNombre());
+		txt_telefono_contacto.setText(contacto.getTelefono());
+
 	}
 
 	@Override

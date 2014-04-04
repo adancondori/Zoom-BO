@@ -21,13 +21,13 @@
 //import android.widget.RelativeLayout.LayoutParams;
 //import android.widget.TextView;
 //
-//public class NavDrawerListAdapter extends ArrayAdapter<NavDrawerItem> {
+//public class NavDrawerListAdapter extends ArrayAdapter<Contacto> {
 //
 //	private Context context;
-//	private ArrayList<NavDrawerItem> navDrawerItems;
+//	private ArrayList<Contacto> navDrawerItems;
 //
 //	public NavDrawerListAdapter(Context context,
-//			ArrayList<NavDrawerItem> navDrawerItems) {
+//			ArrayList<Contacto> navDrawerItems) {
 //		super(context, R.layout.drawer_list_item, navDrawerItems);
 //		this.context = context;
 //		this.navDrawerItems = navDrawerItems;
@@ -39,7 +39,7 @@
 //	}
 //
 //	@Override
-//	public NavDrawerItem getItem(int position) {
+//	public Contacto getItem(int position) {
 //		return navDrawerItems.get(position);
 //	}
 //
@@ -61,9 +61,9 @@
 //		TextView txtCount = (TextView) convertView.findViewById(R.id.counter);// counter
 //
 //		// switch (navDrawerItems.get(position).getType()) {
-//		// case NavDrawerItem.type_normal: {
+//		// case Contacto.type_normal: {
 //		// if (position == 0 && navDrawerItems.get(position).getType() ==
-//		// NavDrawerItem.type_Persona) {
+//		// Contacto.type_Persona) {
 //		// Bitmap bmp;
 //		// int width = 150;
 //		// int height = 150;
@@ -90,7 +90,7 @@
 //		// break;
 //		// }
 //
-//		// case NavDrawerItem.type_cabecera: {
+//		// case Contacto.type_cabecera: {
 //		//
 //		// LayoutParams lp = new LayoutParams(LayoutParams.FILL_PARENT,
 //		// LayoutParams.FILL_PARENT);

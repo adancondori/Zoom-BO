@@ -177,7 +177,7 @@ public class BuscarContactoActivity extends SherlockActivity implements
 			String aux[] = navMenuTitles[i].split(":");
 			switch (Integer.valueOf(aux[0])) {
 			// case AdapterPerfil.TYPE_PERFIL:
-			// drawerListAdapter.addSeparatorItem(new NavDrawerItem(aux[1],
+			// drawerListAdapter.addSeparatorItem(new Contacto(aux[1],
 			// navMenuIcons.getResourceId(i, -1)),
 			// AdapterPerfil.TYPE_PERFIL);
 			// break;
@@ -186,12 +186,12 @@ public class BuscarContactoActivity extends SherlockActivity implements
 						.getResourceId(i, -1)));
 				break;
 			// case AdapterPerfil.TYPE_SEPARATOR:
-			// drawerListAdapter.addSeparatorItem(new NavDrawerItem(aux[1],
+			// drawerListAdapter.addSeparatorItem(new Contacto(aux[1],
 			// listevent.getResourceId(i, -1)),
 			// AdapterPerfil.TYPE_SEPARATOR);
 			// break;
 			// case AdapterPerfil.TYPE_COPIRIGHT:
-			// NavDrawerItem item = new NavDrawerItem(aux[1] + ":" + aux[2],
+			// Contacto item = new Contacto(aux[1] + ":" + aux[2],
 			// listevent.getResourceId(i, -1));
 			// drawerListAdapter.addSeparatorItem(item,
 			// AdapterPerfil.TYPE_COPIRIGHT);

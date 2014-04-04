@@ -170,6 +170,46 @@
         <item>0:Celulares al por mayor y baratisimos</item>
         <item>0:Quieres un hostin gratis</item>
     </string-array>
+    <string-array name="contactos_items">
+        <item>Adan Condori</item>
+        <item>Jorge Bustamente</item>
+        <item>Joaquon Bustamente</item>
+        <item>Charly Zambrana</item>
+        <item>Dayan Ribera</item>
+        <item>Marta Mollo</item>
+        <item>Perla Dioni</item>
+        <item>Luis Bera</item>
+        <item>Marta Mollo</item>
+        <item>Adan Condori</item>
+        <item>Jorge Bustamente</item>
+        <item>Joaquon Bustamente</item>
+        <item>Charly Zambrana</item>
+        <item>Dayan Ribera</item>
+        <item>Marta Mollo</item>
+        <item>Perla Dioni</item>
+        <item>Luis Bera</item>
+        <item>Marta Mollo</item>
+    </string-array>
+    <string-array name="contactos_telefono_items">
+        <item>79050606</item>
+        <item>72180342</item>
+        <item>33546412</item>
+        <item>74586955</item>
+        <item>75945513</item>
+        <item>75846256</item>
+        <item>72555555</item>
+        <item>72555555</item>
+        <item>72555555</item>
+        <item>72555555</item>
+        <item>72555555</item>
+        <item>72555555</item>
+        <item>72334546</item>
+        <item>72165464</item>
+        <item>71265465</item>
+        <item>71654865</item>
+        <item>70000000</item>
+        <item>70024174</item>
+    </string-array>
 
     <drawable name="ab_bg_black">#88000000</drawable>
 
