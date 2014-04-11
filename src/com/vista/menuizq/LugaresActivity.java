@@ -121,9 +121,10 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 		list.add("Ver");
 		list.add("Modificar");
 		list.add("Eliminar");
+		list.add("Compartir");
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		// builder.setTitle("Definir Foto de Perfil");
+		 builder.setTitle("¿Qué desea hacer?");
 
 		// ListView modeList = new ListView(context);
 		modeList.setBackgroundColor(Color.WHITE);
@@ -159,6 +160,9 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 				case 2:
 					dialogo_confirmacion(pos);
 					break;
+				case 3:
+					// dialogo_confirmacion(pos);
+					break;
 				}
 
 				dialog.dismiss();
@@ -174,11 +178,10 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 				LugaresActivity.this);
 
 		// Setting Dialog Title
-		// alertDialog.setTitle("Confirma Dirección...");
+		alertDialog.setTitle("Desea eliminar direción");
 
 		// Setting Dialog Message
-		alertDialog.setMessage("Desea eliminar Direción "
-				+ LUGARES_ELIMINAR.getTitulo());
+		alertDialog.setMessage(LUGARES_ELIMINAR.getTitulo());
 
 		// Setting Positive "Yes" Button
 		alertDialog.setPositiveButton("SI",

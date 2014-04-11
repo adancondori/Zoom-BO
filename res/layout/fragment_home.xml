@@ -98,6 +98,16 @@
                 android:text="0.0"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#E32636" />
+
+<!--             <View -->
+<!--                 android:id="@+id/view_compas" -->
+<!--                 android:layout_width="70dp" -->
+<!--                 android:layout_height="70dp" -->
+<!--                 android:layout_above="@+id/imgzoom2" -->
+<!--                 android:layout_marginRight="87dp" -->
+<!--                 android:layout_toLeftOf="@+id/imgzoom2" -->
+<!--                 android:background="@color/negro" /> -->
+
         </RelativeLayout>
 
         <LinearLayout

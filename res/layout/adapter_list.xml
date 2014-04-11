@@ -21,7 +21,7 @@
         android:layout_below="@+id/title"
         android:layout_toRightOf="@+id/icon"
         android:gravity="center_vertical"
-        android:text="Ing. Informatico"
+        android:text="Ing. Mecánico"
         android:textColor="@color/background_titles"
         android:textSize="15sp" />
 
@@ -32,7 +32,7 @@
         android:layout_marginTop="28dp"
         android:layout_toRightOf="@+id/icon"
         android:gravity="center_vertical"
-        android:text="Adan Condori C"
+        android:text="Edward Castellon"
         android:textColor="@color/background_titles"
         android:textSize="18sp"
         android:textStyle="bold" />

@@ -58,7 +58,7 @@ public class MainActivity extends BaseActivity implements OnQueryTextListener,
 	Fragment _menuDERFragment = null;
 	public static boolean morecategoria = false;
 	public static boolean menuderecho = true;
-	public int _id_panelderecho = 0;
+	public int _id_panelderecho = 0; 
 
 	// --------End Variables -------------------------------
 

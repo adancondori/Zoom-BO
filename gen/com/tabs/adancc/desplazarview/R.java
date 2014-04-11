@@ -21,11 +21,11 @@ public final class R {
 		public static final int underlineHeight = 0x7f01003c;
 	}
 	public static final class color {
-		public static final int background_tab_pressed = 0x7f090008;
-		public static final int background_tab_pressed_celeste = 0x7f090007;
+		public static final int background_tab_pressed = 0x7f0a0008;
+		public static final int background_tab_pressed_celeste = 0x7f0a0007;
 	}
 	public static final class dimen {
-		public static final int activity_horizontal_margin = 0x7f070012;
+		public static final int activity_horizontal_margin = 0x7f080012;
 	}
 	public static final class drawable {
 		public static final int background_tab = 0x7f02007d;

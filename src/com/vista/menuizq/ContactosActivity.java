@@ -23,6 +23,7 @@ public class ContactosActivity extends SherlockActivity implements
 		OnClickListener, OnItemClickListener {
 	ListView listView_contactos;
 	private Adapter_Contacto adapter_Contacto;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

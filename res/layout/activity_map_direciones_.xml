@@ -111,6 +111,7 @@
         android:layout_above="@+id/btn_guardar_direcciones"
         android:layout_alignLeft="@+id/txt_titulo_direcciones"
         android:layout_alignRight="@+id/txt_titulo_direcciones"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/redondeado"
         android:drawableLeft="@drawable/p_rutas"
         android:drawablePadding="5dp"
@@ -123,6 +124,9 @@
         android:singleLine="true"
         android:textColor="@color/negro"
         android:textColorHint="@color/colorhint"
-        android:textSize="18sp" />
+        android:textSize="18sp" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

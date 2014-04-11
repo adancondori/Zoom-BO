@@ -35,6 +35,7 @@ import com.vista.menuder.MyPagerAdapter;
 import com.vista.menuizq.DetalleContactoActivity;
 import com.vista.negocio.GoogleMapas;
 import com.vista.util.AlertDialogManager_Progres;
+import com.vista.util.MyCompassView;
 import com.vista.util.Utils;
 
 import android.annotation.SuppressLint;
@@ -52,6 +53,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.CursorAdapter;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 
@@ -100,11 +102,16 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 
 @SuppressLint("NewApi")
 public class HomeFragment extends Fragment {
 	LayoutInflater inflater;
 	View rootView;
+//	View viewcompas;
 	// LinearLayout layoutAnimadotoolhijo;
 	// RelativeLayout layoutAnimadotool;
 	LinearLayout layoutAnimado;
@@ -115,7 +122,7 @@ public class HomeFragment extends Fragment {
 	boolean visible = false;
 	LatLng latLngCurrent;
 	boolean visiblesearch = true;
-	// ExpandableListView imglocation typemap _search
+	// ExpandableListView imglocation typemap _search imgspeed
 	ExpandableListView expandableListView;
 
 	Adapter_ExpandableList listAdapter;
@@ -157,7 +164,26 @@ public class HomeFragment extends Fragment {
 				.findViewById(R.id._categoria_expandableListV);
 		IU_expandableListView();
 		// crearSearch();
+		// *-----------------------
+		compassView = new MyCompassView(rootView.getContext());
+//		viewcompas =(View) rootView.findViewById(R.id.view_compas);
+//		viewcompas=compassView;
+		
+		
+		sensorService = (SensorManager) getActivity().getSystemService(
+				Context.SENSOR_SERVICE);
+		sensor = sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+		if (sensor != null) {
+			sensorService.registerListener(mySensorEventListener, sensor,
+					SensorManager.SENSOR_DELAY_NORMAL);
+			Log.i("Compass MainActivity", "Registerered for ORIENTATION Sensor");
 
+		} else {
+			Log.e("Compass MainActivity", "Registerered for ORIENTATION Sensor");
+			Toast.makeText(getActivity(), "ORIENTATION Sensor not found",
+					Toast.LENGTH_LONG).show();
+			// finish();
+		}
 		return rootView;
 	}
 
@@ -1060,8 +1086,9 @@ public class HomeFragment extends Fragment {
 		// imgaltitude.setVisibility(View.VISIBLE);
 
 		if (map != null
-				&& ((map.getMyLocation().getAltitude() != 0.0) || (map
-						.getMyLocation().getSpeed() != 0.0))) {
+//				&& ((map.getMyLocation().getAltitude() != 0.0) || (map
+//						.getMyLocation().getSpeed() != 0.0))
+						) {
 			imgspeed.setVisibility(View.VISIBLE);
 			// *-- speed
 			float d = map.getMyLocation().getSpeed();
@@ -1383,5 +1410,34 @@ public class HomeFragment extends Fragment {
 		listDataChild.put(listDataHeader.get(0), top250); // Header, Child data
 		listDataChild.put(listDataHeader.get(1), nowShowing);
 		listDataChild.put(listDataHeader.get(2), comingSoon);
+	}
+
+	// *----------------------------------------------------------------------
+	private static SensorManager sensorService;
+	private MyCompassView compassView;
+	private Sensor sensor;
+	private SensorEventListener mySensorEventListener = new SensorEventListener() {
+
+		@Override
+		public void onSensorChanged(SensorEvent event) {
+			// angle between the magnetic north direction
+			// 0=North, 90=East, 180=South, 270=West
+			float azimuth = event.values[0];
+			compassView.updateData(azimuth);
+		}
+
+		@Override
+		public void onAccuracyChanged(Sensor sensor, int accuracy) {
+			// TODO Auto-generated method stub
+
+		}
+	};
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (sensor != null) {
+			sensorService.unregisterListener(mySensorEventListener);
+		}
 	}
 }
