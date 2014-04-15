@@ -2,47 +2,64 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background_listview" >
+    android:paddingRight="@dimen/activity_horizontal_margin" >
 
-    <LinearLayout
-        android:id="@+id/LinearLayout1"
-        android:layout_width="fill_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/redondeado_fondo"
-        android:gravity="center_vertical|left"
-        android:orientation="vertical"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp" >
+        android:background="@drawable/redondeado_fondo" >
 
-        <TextView
-            android:id="@+id/txt_titulo"
-            android:layout_width="fill_parent"
+        <RelativeLayout
+            android:id="@+id/rela5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:text="Nombre"
-            android:textColor="@color/negro"
-            android:textColorHint="@color/colorhint"
-            android:textSize="18sp" />
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/img_direcciones_de" >
 
-        <TextView
-            android:id="@+id/txt_direccion"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/p_location"
-            android:drawablePadding="5dp"
-            android:ems="10"
+            <LinearLayout
+                android:id="@+id/LinearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_titulo_direcciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Nombre"
+                    android:textColor="@color/negro"
+                    android:textColorHint="@color/colorhint"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_direccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="@string/title_direccion_domicilio"
+                    android:singleLine="true"
+                    android:text="@string/title_direccion_domicilio"
+                    android:textColor="@color/negro"
+                    android:textColorHint="@color/colorhint"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_direcciones_de"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
             android:gravity="center_vertical|left"
-            android:hint="@string/title_direccion_domicilio"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:singleLine="true"
-            android:text="@string/title_direccion_domicilio"
-            android:textColor="@color/negro"
-            android:textColorHint="@color/colorhint"
-            android:textSize="12sp" />
-    </LinearLayout>
+            android:src="@drawable/p_location" />
+    </RelativeLayout>
 
 </RelativeLayout>

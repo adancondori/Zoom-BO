@@ -6,20 +6,10 @@
     android:paddingRight="12dp"
     android:paddingTop="0dp" >
 
-    <View
-        android:id="@+id/view1"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        
-        android:layout_alignParentTop="true"
-        android:background="@color/colorhint" />
-
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view1" >
+        android:layout_height="wrap_content" >
 
         <ImageView
             android:id="@+id/icon"
@@ -28,6 +18,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
+            android:contentDescription="@string/title_content_imagendescripcion"
             android:src="@drawable/profle" />
 
         <TextView
@@ -49,12 +40,11 @@
             android:layout_toRightOf="@+id/icon"
             android:gravity="center_vertical"
             android:text="Varios"
-            android:textColor="@color/negro" 
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textColor="@color/negro"
+            android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/titleofertas"
+            android:id="@+id/titleoferta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/txt_telefono"
@@ -65,5 +55,13 @@
             android:textColor="@color/negro"
             android:textSize="12sp" />
     </RelativeLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@color/colorhint" />
 
 </RelativeLayout>

@@ -46,7 +46,7 @@ public class FavoritoCategoriaFragment extends Fragment {
 												// goes
 												// into this TextView
 				CrearHijos(), // childData describes second-level entries
-				R.layout.grupohijo, // Layout for second-level entries
+				R.layout.grupohijo_check, // Layout for second-level entries
 				new String[] { "hijo" }, // Keys in childData maps to display
 				new int[] { R.id.childname } // Data under the keys above go
 												// into these TextViews
@@ -96,5 +96,5 @@ public class FavoritoCategoriaFragment extends Fragment {
 		}
 		return result;
 	}
-	
+
 }

@@ -82,13 +82,20 @@ public class Adapter_Lugares extends BaseAdapter {
 			case TYPE_ITEM:
 				convertView = mInflater.inflate(R.layout.adapter_lugares, null);
 				holder.txt_titulo = (TextView) convertView
-						.findViewById(R.id.txt_titulo);
+						.findViewById(R.id.txt_titulo_direcciones);
+				holder.img_tipo = (ImageView) convertView
+						.findViewById(R.id.img_direcciones_de);
 				holder.txt_titulo.setText(mData.get(position).getTitulo());
+
 				holder.txt_direccion = (TextView) convertView
 						.findViewById(R.id.txt_direccion);
 				holder.txt_direccion
 						.setText(mData.get(position).getDireccion());
-
+				if (position == 0) {
+					holder.img_tipo.setImageResource(R.drawable.p_home);
+				} else if (position == 1) {
+					holder.img_tipo.setImageResource(R.drawable.p_briefcase);
+				}
 				break;
 			case TYPE_SEPARATOR:
 				// convertView = mInflater.inflate(R.layout.item2, null);
@@ -102,6 +109,11 @@ public class Adapter_Lugares extends BaseAdapter {
 		}
 		holder.txt_titulo.setText(mData.get(position).getTitulo());
 		holder.txt_direccion.setText(mData.get(position).getDireccion());
+		if (position == 0) {
+			holder.img_tipo.setImageResource(R.drawable.p_home);
+		} else if (position == 1) {
+			holder.img_tipo.setImageResource(R.drawable.p_briefcase);
+		}
 		return convertView;
 	}
 
@@ -124,6 +136,7 @@ public class Adapter_Lugares extends BaseAdapter {
 	public static class ViewHolder {
 		public TextView txt_titulo;
 		public TextView txt_direccion;
+		public ImageView img_tipo;
 
 	}
 }

@@ -83,8 +83,10 @@ public class Adapter_Contacto extends BaseAdapter {
 			holder = new ViewHolder();
 			switch (type) {
 			case TYPE_SEPARATOR_LETRA:
-				convertView = mInflater.inflate(R.layout.onlybutton, null);
-				convertView.setBackgroundResource(R.color.blanco);
+				convertView = mInflater.inflate(
+						R.layout.adapter_separator_letra, null);
+				holder.title = (TextView) convertView.findViewById(R.id.title);
+
 				break;
 
 			case TYPE_ELEMENTO:
@@ -103,7 +105,9 @@ public class Adapter_Contacto extends BaseAdapter {
 		}
 
 		holder.title.setText(mData.get(position).getNombre());
-		holder.phone.setText(mData.get(position).getTelefono());
+		if (mData.get(position).getTipo() == TYPE_ELEMENTO) {
+			holder.phone.setText(mData.get(position).getTelefono());
+		}
 
 		return convertView;
 	}

@@ -169,6 +169,10 @@
             android:label="@string/title_activity_map_direciones_"
             android:theme="@style/AppThemecolordrawer" >
         </activity>
+        <activity
+            android:name="com.vista.menuizq.Favoritos_Activity"
+            android:label="@string/title_activity_favoritos_" >
+        </activity>
     </application>
 
 </manifest>

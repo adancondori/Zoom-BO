@@ -28,7 +28,7 @@ public class OfertaFragment extends ListFragment {
 	private String[] navMenuTitles;
 	private TypedArray listevent;
 	LayoutInflater inflater;
-	AdapterOferta drawerListAdapter;
+	AdapterOferta adapterOferta;
 
 	// *--------sitema-----------------------------
 
@@ -40,9 +40,9 @@ public class OfertaFragment extends ListFragment {
 		View v = inflater.inflate(R.layout.fragment_event, container, false);
 		mDrawerList = (PullToRefreshListView) v
 				.findViewById(R.id.pull_refresh_list);
-		drawerListAdapter = new AdapterOferta(getActivity());
+		adapterOferta = new AdapterOferta(getActivity());
 		menuslidingInfo();
-		mDrawerList.setAdapter(drawerListAdapter);
+		mDrawerList.setAdapter(adapterOferta);
 
 		// *--Set a listener to be invoked when the list should be refreshed.
 		mDrawerList.setOnRefreshListener(new OnRefreshListener<ListView>() {
@@ -74,7 +74,7 @@ public class OfertaFragment extends ListFragment {
 
 		ListView actualListView = mDrawerList.getRefreshableView();
 		registerForContextMenu(actualListView);
-		actualListView.setAdapter(drawerListAdapter);
+		actualListView.setAdapter(adapterOferta);
 		return v;
 	}
 
@@ -86,18 +86,18 @@ public class OfertaFragment extends ListFragment {
 		for (int i = 0; i < navMenuTitles.length; i++) {
 			String aux[] = navMenuTitles[i].split(":");
 			if ((i % 2) == 0) {
-				drawerListAdapter.addSeparatorItem(new NavDrawerItem(aux[1],
+				adapterOferta.addSeparatorItem(new NavDrawerItem(aux[1],
 						listevent.getResourceId(i, -1)),
-						AdapterPerfil.TYPE_ITEM);
+						AdapterOferta.TYPE_ITEM);
 			} else {
-				drawerListAdapter.addSeparatorItem(new NavDrawerItem(aux[1],
+				adapterOferta.addSeparatorItem(new NavDrawerItem(aux[1],
 						listevent.getResourceId(i, -1)),
-						AdapterPerfil.TYPE_PERFIL);
+						AdapterOferta.TYPE_PERFIL);
 			}
 		}
-		drawerListAdapter.addSeparatorItem(
+		adapterOferta.addSeparatorItem(
 				new NavDrawerItem("", listevent.getResourceId(20, -1)),
-				AdapterPerfil.TYPE_SEPARATOR);
+				AdapterOferta.TYPE_SEPARATOR);
 	}
 
 	private class GetDataTask extends AsyncTask<Void, Void, String[]> {
@@ -115,24 +115,24 @@ public class OfertaFragment extends ListFragment {
 		@Override
 		protected void onPostExecute(String[] result) {
 			// mListItems.addFirst("Added after refresh...");
-			drawerListAdapter.eliminar_primero();
-			if (drawerListAdapter.getCount() % 2 == 0) {
-				drawerListAdapter.addSeparatorItem(
+			adapterOferta.eliminar_primero();
+			if (adapterOferta.getCount() % 2 == 0) {
+				adapterOferta.addSeparatorItem(
 						new NavDrawerItem("Hola como estas "
-								+ String.valueOf(drawerListAdapter.getCount()),
-								0), AdapterPerfil.TYPE_ITEM);
+								+ String.valueOf(adapterOferta.getCount()), 0),
+						AdapterPerfil.TYPE_ITEM);
 			} else {
-				drawerListAdapter.addSeparatorItem(
+				adapterOferta.addSeparatorItem(
 						new NavDrawerItem("Hola como estas "
-								+ String.valueOf(drawerListAdapter.getCount()),
-								0), AdapterPerfil.TYPE_PERFIL);
+								+ String.valueOf(adapterOferta.getCount()), 0),
+						AdapterPerfil.TYPE_PERFIL);
 			}
 
-			drawerListAdapter.addSeparatorItem(
+			adapterOferta.addSeparatorItem(
 					new NavDrawerItem("", listevent.getResourceId(20, -1)),
 					AdapterPerfil.TYPE_SEPARATOR);
 
-			drawerListAdapter.notifyDataSetChanged();
+			adapterOferta.notifyDataSetChanged();
 
 			// Call onRefreshComplete when the list has been refreshed.
 			mDrawerList.onRefreshComplete();

@@ -107,7 +107,7 @@ public class MenuIZQFragment extends ListFragment {
 
 			break;
 		case 4:
-			intent = new Intent(getActivity(), FavoritosActivity.class);
+			intent = new Intent(getActivity(), Favoritos_Activity.class);
 			break;
 		case 5:
 			intent = new Intent(getActivity(), ContactosActivity.class);

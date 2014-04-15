@@ -21,7 +21,7 @@
         <item>Mi trabajo</item>
     </string-array>
     <string-array name="locations_lugares_direccion">
-        <item>B/ Los Lotes</item>
+        <item>Actualize su Dirección</item>
         <item>Av/ Mutualista</item>
     </string-array>
     <!-- Nav Drawer Menu Items -->
@@ -175,20 +175,24 @@
         <item>Jorge Bustamente</item>
         <item>Joaquon Bustamente</item>
         <item>Charly Zambrana</item>
+        <item>D</item>
         <item>Dayan Ribera</item>
         <item>Marta Mollo</item>
         <item>Perla Dioni</item>
         <item>Luis Bera</item>
         <item>Marta Mollo</item>
         <item>Adan Condori</item>
+        <item>C</item>
         <item>Jorge Bustamente</item>
         <item>Joaquon Bustamente</item>
+        <item>B</item>
         <item>Charly Zambrana</item>
         <item>Dayan Ribera</item>
         <item>Marta Mollo</item>
         <item>Perla Dioni</item>
         <item>Luis Bera</item>
         <item>Marta Mollo</item>
+        <item>A</item>
     </string-array>
     <string-array name="contactos_telefono_items">
         <item>79050606</item>
@@ -200,11 +204,15 @@
         <item>72555555</item>
         <item>72555555</item>
         <item>72555555</item>
-        <item>72555555</item>
-        <item>72555555</item>
-        <item>72555555</item>
+        <item>72258134</item>
+        <item>72190536</item>
+        <item>72526148</item>
         <item>72334546</item>
         <item>72165464</item>
+        <item>71265465</item>
+        <item>71654865</item>
+        <item>70000000</item>
+        <item>70024174</item>
         <item>71265465</item>
         <item>71654865</item>
         <item>70000000</item>

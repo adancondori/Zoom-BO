@@ -25,42 +25,84 @@
             android:background="@drawable/img_selector"
             android:contentDescription="@string/title_content_imagendescripcion"
             android:src="@drawable/mira" />
+    </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/img_location_direcciones"
+    <LinearLayout
+        android:id="@+id/liner_hijo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:choiceMode="singleChoice"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/map_direcciones"
-            android:layout_alignRight="@+id/map_direcciones"
-            android:layout_marginBottom="22dp"
-            android:layout_marginRight="17dp"
+            android:adjustViewBounds="true"
             android:background="@drawable/img_selector"
             android:contentDescription="@string/title_content_imagendescripcion"
-            android:src="@drawable/ubicacion" />
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/focus" />
 
-        <ImageView
-            android:id="@+id/img_tipo_mapas"
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tipo_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="22dp"
-            android:layout_marginRight="72dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
             android:background="@drawable/img_selector"
             android:contentDescription="@string/title_content_imagendescripcion"
+            android:gravity="center_horizontal|center_vertical"
             android:src="@drawable/mapas" />
 
-        <ImageView
-            android:id="@+id/ImageView01"
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_location_direccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/img_tipo_mapas"
-            android:layout_marginRight="12dp"
-            android:layout_toLeftOf="@+id/img_tipo_mapas"
+            android:adjustViewBounds="true"
             android:background="@drawable/img_selector"
             android:contentDescription="@string/title_content_imagendescripcion"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/ubicacion" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_micro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/img_selector"
+            android:contentDescription="@string/title_content_imagendescripcion"
+            android:gravity="center_horizontal|center_vertical"
             android:src="@drawable/bus" />
-    </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/txt_titulo_direcciones"

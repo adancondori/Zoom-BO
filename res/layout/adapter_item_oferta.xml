@@ -53,7 +53,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/titleofertas"
+            android:id="@+id/titleoferta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/txt_telefono"

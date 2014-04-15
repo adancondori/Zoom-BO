@@ -23,7 +23,6 @@ public class ContactosActivity extends SherlockActivity implements
 		OnClickListener, OnItemClickListener {
 	ListView listView_contactos;
 	private Adapter_Contacto adapter_Contacto;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +51,15 @@ public class ContactosActivity extends SherlockActivity implements
 		String[] telefonos = getResources().getStringArray(
 				R.array.contactos_telefono_items);
 		for (int i = 0; i < nombres.length; i++) {
-			adapter_Contacto.addItem(new Contacto(0, nombres[i], telefonos[i],
-					"", telefonos[i], 0, Adapter_Contacto.TYPE_ELEMENTO));
+			if (nombres[i].length() > 2) {
+				adapter_Contacto.addItem(new Contacto(0, nombres[i],
+						telefonos[i], "", telefonos[i], 0,
+						Adapter_Contacto.TYPE_ELEMENTO));
+			} else {
+				adapter_Contacto.addItem(new Contacto(0, nombres[i],
+						telefonos[i], "", telefonos[i], 0,
+						Adapter_Contacto.TYPE_SEPARATOR_LETRA));
+			}
 		}
 	}
 

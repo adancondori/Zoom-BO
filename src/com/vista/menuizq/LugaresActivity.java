@@ -82,6 +82,7 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 					-17.4704965, -63.1122724, 0, 0, Adapter_Lugares.TYPE_ITEM);
 			adapter_Lugares.addItem(lugares);
 		}
+
 		listView = (ListView) findViewById(R.id.lvItems);
 		listView.setAdapter(adapter_Lugares);
 		listView.setOnItemClickListener(this);
@@ -124,7 +125,7 @@ public class LugaresActivity extends SherlockFragmentActivity implements
 		list.add("Compartir");
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		 builder.setTitle("¿Qué desea hacer?");
+		builder.setTitle("¿Qué desea hacer?");
 
 		// ListView modeList = new ListView(context);
 		modeList.setBackgroundColor(Color.WHITE);

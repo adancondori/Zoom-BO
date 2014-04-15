@@ -111,9 +111,9 @@ import android.hardware.SensorManager;
 public class HomeFragment extends Fragment {
 	LayoutInflater inflater;
 	View rootView;
-//	View viewcompas;
+	// View viewcompas;
 	// LinearLayout layoutAnimadotoolhijo;
-	// RelativeLayout layoutAnimadotool;
+	// RelativeLayout layoutAnimadotool; 
 	LinearLayout layoutAnimado;
 	HorizontalScrollView scrollView;
 	GoogleMapas mapas;
@@ -147,7 +147,7 @@ public class HomeFragment extends Fragment {
 		this.rootView = this.inflater.inflate(R.layout.fragment_home,
 
 		container, false);
-		// imgaltitude
+		// imgaltitude imglocation
 		clickmiubicacion();
 
 		inicializarcomponentes();
@@ -155,7 +155,6 @@ public class HomeFragment extends Fragment {
 
 		mapas = new GoogleMapas(rootView, this.map);
 
-		map.setOnMyLocationChangeListener(new Myubication());
 		changezoom();
 
 		SlidinUP();
@@ -166,10 +165,9 @@ public class HomeFragment extends Fragment {
 		// crearSearch();
 		// *-----------------------
 		compassView = new MyCompassView(rootView.getContext());
-//		viewcompas =(View) rootView.findViewById(R.id.view_compas);
-//		viewcompas=compassView;
-		
-		
+		// viewcompas =(View) rootView.findViewById(R.id.view_compas);
+		// viewcompas=compassView;
+
 		sensorService = (SensorManager) getActivity().getSystemService(
 				Context.SENSOR_SERVICE);
 		sensor = sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION);
@@ -233,7 +231,7 @@ public class HomeFragment extends Fragment {
 						"Sorry! unable to create maps", Toast.LENGTH_SHORT)
 						.show();
 			} else {
-				LatLng SantaCruz = new LatLng(-17.39379, -66.156972);
+				LatLng SantaCruz = new LatLng(-17.7811645,-63.1862261);
 				CameraPosition camPos = new CameraPosition.Builder()
 						.target(SantaCruz).zoom(18).bearing(45).build();
 
@@ -241,6 +239,7 @@ public class HomeFragment extends Fragment {
 						.newCameraPosition(camPos);
 				map.animateCamera(camUpd3);
 				map.setMyLocationEnabled(true);
+				map.setOnMyLocationChangeListener(new Myubication());
 				map.getUiSettings().setMyLocationButtonEnabled(false);
 				map.getUiSettings().setZoomControlsEnabled(false);
 				map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
@@ -1057,7 +1056,6 @@ public class HomeFragment extends Fragment {
 	}
 
 	// / escuchador de mapa
-
 	public class Myubication implements OnMyLocationChangeListener {
 
 		@Override
@@ -1086,9 +1084,9 @@ public class HomeFragment extends Fragment {
 		// imgaltitude.setVisibility(View.VISIBLE);
 
 		if (map != null
-//				&& ((map.getMyLocation().getAltitude() != 0.0) || (map
-//						.getMyLocation().getSpeed() != 0.0))
-						) {
+		// && ((map.getMyLocation().getAltitude() != 0.0) || (map
+		// .getMyLocation().getSpeed() != 0.0))
+		) {
 			imgspeed.setVisibility(View.VISIBLE);
 			// *-- speed
 			float d = map.getMyLocation().getSpeed();

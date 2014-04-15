@@ -35,13 +35,9 @@ public class AdapterOferta extends BaseAdapter {
 	private LinkedList<NavDrawerItem> mData = new LinkedList<NavDrawerItem>();
 	private LayoutInflater mInflater;
 
-	// private TreeSet<Integer> mSeparatorsSet = new TreeSet<Integer>();
-	private Context context;
-
 	public AdapterOferta(Context context) {
 		mInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		this.context = context;
 	}
 
 	public void addItem(final NavDrawerItem item) {
@@ -122,14 +118,14 @@ public class AdapterOferta extends BaseAdapter {
 				convertView.setBackgroundResource(R.color.blanco);
 
 				holder.title = (TextView) convertView
-						.findViewById(R.id.titleofertas);
+						.findViewById(R.id.titleoferta);
 				break;
 			case TYPE_ITEM:
 				convertView = mInflater.inflate(R.layout.adapter_item_oferta,
 						null);
 				convertView.setBackgroundResource(R.color.background_zebra);
 				holder.title = (TextView) convertView
-						.findViewById(R.id.titleofertas);
+						.findViewById(R.id.titleoferta);
 				break;
 			}
 			convertView.setTag(holder);

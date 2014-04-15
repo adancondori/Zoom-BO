@@ -3,11 +3,8 @@ package com.vista.menuizq;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.tabs.adancc.desplazarview.TabsActivity;
-import com.vista.negocio.SuperAwesomeCardFragment;
-import com.vista.zoonv1.LugaresFragmentComent;
-import com.vista.zoonv1.R;
 
-import android.os.Build;
+import com.vista.zoonv1.R;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -16,8 +13,6 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -33,9 +28,9 @@ public class FavoritosActivity extends SherlockFragmentActivity {
 	private ViewPager pager;
 	private MyPagerAdapter adapter;
 
-	private Drawable oldBackground = null;
+//	private Drawable oldBackground = null;
 
-	private int currentColor = 0xFF666666;
+//	private int currentColor = 0xFF666666;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +55,6 @@ public class FavoritosActivity extends SherlockFragmentActivity {
 		getSupportActionBar().show();
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		int color = Color.parseColor("#3F9FE0");
-		// BackgroundDrawable();
 		changeColor(color);
 
 	}
