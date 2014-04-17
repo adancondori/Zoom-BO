@@ -170,8 +170,14 @@
             android:theme="@style/AppThemecolordrawer" >
         </activity>
         <activity
+            android:name="com.vista.menuizq.Preferidos_Activity"
+            android:label="@string/title_activity_favoritos_"
+            android:theme="@style/AppThemecolordrawer" >
+        </activity>
+        <activity
             android:name="com.vista.menuizq.Favoritos_Activity"
-            android:label="@string/title_activity_favoritos_" >
+            android:label="@string/title_activity_mis__favoritos1_"
+            android:theme="@style/AppThemecolordrawer" >
         </activity>
     </application>
 

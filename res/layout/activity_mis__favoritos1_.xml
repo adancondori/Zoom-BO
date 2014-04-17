@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" >
+
+        <EditText
+            android:id="@+id/search_buscar_contactos"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/redondeado"
+            android:drawableLeft="@drawable/abs__ic_search_api_holo_light"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:hint="@string/title_buscar"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/colorhint"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_favorito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp" >
+
+        <requestFocus />
+    </ListView>
+
+</RelativeLayout>

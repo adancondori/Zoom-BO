@@ -75,6 +75,7 @@
 -keep class com.facebook.widget.LoginButton { <init>(...); }
 
 # view res/layout/activity_detalle_contacto.xml #generated:96
+# view res/layout/activity_eventos.xml #generated:95
 # view res/layout/activity_map_direciones_.xml #generated:13
 # view res/layout/fragment_home.xml #generated:29
 # view res/layout/fragment_map.xml #generated:8
@@ -112,7 +113,7 @@
 # view AndroidManifest.xml #generated:98
 -keep class com.vista.menuizq.FavoritosActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:172
+# view AndroidManifest.xml #generated:177
 -keep class com.vista.menuizq.Favoritos_Activity { <init>(...); }
 
 # view AndroidManifest.xml #generated:142
@@ -123,6 +124,9 @@
 
 # view AndroidManifest.xml #generated:103
 -keep class com.vista.menuizq.PreferenciasActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:172
+-keep class com.vista.menuizq.Preferidos_Activity { <init>(...); }
 
 # view AndroidManifest.xml #generated:132
 -keep class com.vista.menuizq.ServicioAyudaActivity { <init>(...); }

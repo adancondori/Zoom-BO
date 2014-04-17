@@ -97,7 +97,7 @@ public class MenuIZQFragment extends ListFragment {
 		Intent intent = null;
 		switch (position) {
 		case 0:
-			intent = new Intent(getActivity(), FaceActivity.class);
+			// intent = new Intent(getActivity(), FaceActivity.class);
 			break;
 		case 2:
 			intent = new Intent(getActivity(), PerfilActivity.class);
@@ -107,15 +107,18 @@ public class MenuIZQFragment extends ListFragment {
 
 			break;
 		case 4:
-			intent = new Intent(getActivity(), Favoritos_Activity.class);
+			intent = new Intent(getActivity(), ContactosActivity.class);
 			break;
 		case 5:
-			intent = new Intent(getActivity(), ContactosActivity.class);
+			intent = new Intent(getActivity(), Favoritos_Activity.class);
 			break;
 		case 6:
 			intent = new Intent(getActivity(), EventosActivity.class);
 			break;
 		case 7:
+			intent = new Intent(getActivity(), Preferidos_Activity.class);
+			break;
+		case 9:
 			intent = new Intent(getActivity(), PreferenciasActivity.class);
 			break;
 		case 11:

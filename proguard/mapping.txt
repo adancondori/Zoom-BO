@@ -18712,7 +18712,7 @@ com.vista.adapter.AdapterPerfil$ViewHolder -> com.vista.b.b:
     android.widget.TextView title -> b
     android.widget.TextView title2 -> c
     android.widget.TextView counter -> d
-com.vista.adapter.Adapter_ExpandableList -> com.vista.b.c:
+com.vista.adapter.Adapter_ExpandableList_static -> com.vista.b.c:
     android.content.Context _context -> a
     java.util.List _listDataHeader -> b
     java.util.HashMap _listDataChild -> c
@@ -18844,7 +18844,7 @@ com.vista.menuizq.AcercaZoomActivity -> com.vista.menuizq.AcercaZoomActivity:
     43:46:void onBackPressed() -> onBackPressed
 com.vista.menuizq.ContactosActivity -> com.vista.menuizq.ContactosActivity:
     android.widget.ExpandableListView expandableListView -> a
-    com.vista.adapter.Adapter_ExpandableList listAdapter -> b
+    com.vista.adapter.Adapter_ExpandableList_static listAdapter -> b
     java.util.List listDataHeader -> c
     java.util.HashMap listDataChild -> d
     44:58:void onCreate(android.os.Bundle) -> onCreate
@@ -19296,7 +19296,7 @@ com.vista.zoonv1.HomeFragment -> com.vista.zoonv1.w:
     com.google.android.gms.maps.model.LatLng latLngCurrent -> h
     boolean visiblesearch -> i
     android.widget.ExpandableListView expandableListView -> j
-    com.vista.adapter.Adapter_ExpandableList listAdapter -> k
+    com.vista.adapter.Adapter_ExpandableList_static listAdapter -> k
     java.util.List listDataHeader -> l
     java.util.HashMap listDataChild -> m
     int _TIPO_sliding -> n

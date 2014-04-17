@@ -27,7 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.tabs.adancc.desplazarview.TabsActivity;
 import com.vista.GPSsingleton.GPS;
 import com.vista.GPSsingleton.Pedido_Singleton;
-import com.vista.adapter.Adapter_ExpandableList;
+import com.vista.adapter.Adapter_ExpandableList_static;
 import com.vista.json.ParserFunction;
 import com.vista.json.Protocolo_Comunicacion;
 import com.vista.menuder.MenuDERFragment;
@@ -125,7 +125,7 @@ public class HomeFragment extends Fragment {
 	// ExpandableListView imglocation typemap _search imgspeed
 	ExpandableListView expandableListView;
 
-	Adapter_ExpandableList listAdapter;
+	Adapter_ExpandableList_static listAdapter;
 	List<String> listDataHeader;
 	HashMap<String, List<String>> listDataChild;
 
@@ -1303,7 +1303,7 @@ public class HomeFragment extends Fragment {
 	//
 	public void IU_expandableListView() {
 		prepareListData();
-		listAdapter = new Adapter_ExpandableList(getActivity(), listDataHeader,
+		listAdapter = new Adapter_ExpandableList_static(getActivity(), listDataHeader,
 				listDataChild);
 		// setting list adapter
 		expandableListView.setAdapter(listAdapter);

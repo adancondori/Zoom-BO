@@ -1,103 +1,166 @@
 package com.vista.menuizq;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+import com.vista.adapter.Adapter_Contacto;
+import com.vista.adapter.Adapter_Favorito;
+import com.vista.dato.Contacto;
+import com.vista.zoonv1.BuscarContactoActivity;
 import com.vista.zoonv1.R;
+import com.vista.zoonv1.SoliucitudesActivity;
+import com.vista.zoonv1.R.array;
 import com.vista.zoonv1.R.id;
 import com.vista.zoonv1.R.layout;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.view.Menu;
-import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class Favoritos_Activity extends SherlockActivity {
-	ExpandableListView elv;
-	ArrayList<ArrayList<HashMap<String, String>>> result = null;
+public class Favoritos_Activity extends SherlockActivity implements
+		OnClickListener, OnItemClickListener {
+	// **----VARIABLES DEL SISTEMA
+	ListView listView_contactos;
+	private Adapter_Favorito adapter_Contacto;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_favoritos_);
-		elv = (ExpandableListView) findViewById(R.id.expandableList_favorito);
-		cargarExpandableList();
+		setContentView(R.layout.activity_mis__favoritos1_);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+		getSupportActionBar().show();
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		IU_iniciar();
 	}
 
-	// *-------------METODOS DEL SISTEMA
-	public void cargarExpandableList() {
-
-		SimpleExpandableListAdapter expListAdapter = new SimpleExpandableListAdapter(
-				getApplicationContext(), CrearGrupos(), // groupData
-														// describes
-														// the
-														// first-level
-				// entries
-				R.layout.grupo, // Layout for the first-level entries
-				new String[] { "Grupo" }, // Key in the groupData maps to
-											// display
-				new int[] { R.id.paternname }, // Data under "colorName" key
-												// goes
-												// into this TextView
-				CrearHijos(), // childData describes second-level entries
-				R.layout.grupohijo_check, // Layout for second-level entries
-				new String[] { "hijo" }, // Keys in childData maps to display
-				new int[] { R.id.childname } // Data under the keys above go
-												// into these TextViews
-		);
-
-		elv.setAdapter(expListAdapter);
+	public void IU_iniciar() {
+		adapter_Contacto = new Adapter_Favorito(getApplicationContext());
+		rellenar_Datos();
+		listView_contactos = (ListView) findViewById(R.id.list_favorito);
+		listView_contactos.setAdapter(adapter_Contacto);
+		listView_contactos.setOnItemClickListener(this);
 	}
 
-	private String[] groups = { "People Names", "Prueba Dog Names",
-			"Prueba Cat Names", "Fish Names" };
-
-	private String[][] children = { { "Adan", "Juan", "Chuck", "David" },
-			{ "Ace", "Bandit", "Cha-Cha", "Deuce" }, { "Fluffy", "Snuggles" },
-			{ "Goldy", "Bubbles" } };
-
-	private List<HashMap<String, String>> CrearGrupos() {
-
-		// ListGruposClient = new ArrayList<String>();
-		// ListCliente = cliente.getTodo(getApplicationContext());
-		ArrayList<HashMap<String, String>> result = new ArrayList<HashMap<String, String>>();
-		HashMap<String, String> m = null;
-		for (int i = 0; i < groups.length; ++i) {
-			m = new HashMap<String, String>();
-			m.put("Grupo", groups[i]);
-			// ListGruposClient.add(ListCliente.get(i).getNombre());
-			result.add(m);
+	public void rellenar_Datos() {
+		String[] nombres = getResources().getStringArray(
+				R.array.favoritos_nombre_items);
+		// nav drawer icons from resources
+		String[] telefonos = getResources().getStringArray(
+				R.array.contactos_telefono_items);
+		for (int i = 0; i < nombres.length; i++) {
+			adapter_Contacto.addItem(new Contacto(0, nombres[i], telefonos[i],
+					"", telefonos[i], 0, Adapter_Contacto.TYPE_ELEMENTO));
 		}
-		return result;
 	}
 
-	private List<ArrayList<HashMap<String, String>>> CrearHijos() {
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
 
-		result = new ArrayList<ArrayList<HashMap<String, String>>>();
-		for (int i = 0; i < groups.length; ++i) {
-
-			ArrayList<HashMap<String, String>> secList = new ArrayList<HashMap<String, String>>();
-			// List<Negocio> listhijo = null;
-			// listhijo = cliente.getTodoNegocio(this,
-			// String.valueOf(ListCliente.get(i).getCodcl()));
-
-			for (int n = 0; n < children[i].length; ++n) {
-				HashMap<String, String> child = new HashMap<String, String>();
-				child.put("hijo", children[i][n]);
-				secList.add(child);
-			}
-			result.add(secList);
+		switch (item.getItemId()) {
+		case 1: { // Nuevo Grupo solicitudes
+			// mostrarDialogo();
+			return true;
 		}
-		return result;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
-	// @Override
-	// public boolean onCreateOptionsMenu(Menu menu) {
-	// // Inflate the menu; this adds items to the action bar if it is present.
-	// getMenuInflater().inflate(R.menu.favoritos_, menu);
-	// return true;
+
+	public void crearsolicitud(View view) {
+		Intent intent = new Intent(getApplicationContext(),
+				SoliucitudesActivity.class);
+		startActivity(intent);
+	}
+
+	public void crearcontactos(View view) {
+		Intent intent = new Intent(getApplicationContext(),
+				BuscarContactoActivity.class);
+		startActivity(intent);
+	}
+
+	// private void mostrarDialogo() {
+	// LayoutInflater li = LayoutInflater.from(this);
+	// View promptsView = li.inflate(R.layout.dialogo, null);
+	//
+	// AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+	// alertDialogBuilder.setView(promptsView);
+	// alertDialogBuilder.setTitle("Nueva Categoria");
+	// alertDialogBuilder.setCancelable(true);
+	// final EditText userInput = (EditText) promptsView
+	// .findViewById(R.id.edit_Name);
+	//
+	// alertDialogBuilder
+	// .setCancelable(false)
+	// .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	// public void onClick(DialogInterface dialog, int id) {
+	// actualizar(userInput.getText().toString());
 	// }
+	// })
+	// .setNegativeButton("Cancel",
+	// new DialogInterface.OnClickListener() {
+	// public void onClick(DialogInterface dialog, int id) {
+	// dialog.cancel();
+	// }
+	// });
+	//
+	// // create alert dialog
+	// AlertDialog alertDialog = alertDialogBuilder.create();
+	// alertDialog.show();
+	//
+	// }
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+
+		if (resultCode == RESULT_OK) {
+			// cargarExpandableList();
+		}
+
+	}
+
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+
+		int itemId = item.getItemId();
+		switch (itemId) {
+		case android.R.id.home:
+			setResult(RESULT_OK, getIntent());
+			finish();
+			break;
+		}
+		return true;
+	}
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		setResult(RESULT_OK, getIntent());
+		finish();
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+			long arg3) {
+		// TODO Auto-generated method stub
+		// Intent intent = new Intent(getApplicationContext(),
+		// DetalleContactoActivity.class);
+		// intent.putExtra("CONTACTO", adapter_Contacto.getContacto(position));
+
+		// startActivity(intent);
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+	}
+
+	//
 
 }

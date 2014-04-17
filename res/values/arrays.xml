@@ -30,16 +30,16 @@
         <item>2:PERSONAL</item>
         <item>0:Mi Perfil</item>
         <item>0:Mis Direcciones</item>
-        <item>0:Mis Favoritos</item>
         <item>0:Mis Contactos</item>
+        <item>0:Mis Favoritos</item>
         <item>0:Mis Eventos</item>
-        <item>0:Mis Preferencias</item>
+        <item>0:Mis Preferidos</item>
         <item>2:CONFIGURACIÓN</item>
-        <item>0:Mi Cuenta   (Premium) </item>
-        <item>0:Terminos y Condición</item>
+        <item>0:Mi Configuración</item>
+        <item>0:Terminos y Condiciones</item>
         <item>0:Servicio de Ayuda</item>
         <item>0:Acerca de Zoom</item>
-        <item>0:Cerrar Sesion</item>
+        <item>0:Cerrar Sesión</item>
         <item>3:ZOOM.BO   ©2014</item>
     </string-array>
 
@@ -217,6 +217,30 @@
         <item>71654865</item>
         <item>70000000</item>
         <item>70024174</item>
+    </string-array>
+    <string-array name="favoritos_nombre_items">
+       <item>NetPiza</item>
+        <item>Garoto</item>
+        <item>Hipermaxi</item>
+        <item>Transito</item>
+        <item>Kia Motors</item>
+        <item>Zoom Bolivia</item>
+        <item>NetPiza</item>
+        <item>Garoto</item>
+        <item>Hipermaxi</item>
+        <item>Transito</item>
+        <item>Kia Motors</item>
+        <item>Zoom Bolivia</item>
+        <item>NetPiza</item>
+        <item>Garoto</item>
+        <item>Hipermaxi</item>
+        <item>Transito</item>
+        <item>Kia Motors</item>
+        <item>Zoom Bolivia</item>
+        <item>NetPiza</item>
+        <item>Garoto</item>
+        <item>Hipermaxi</item>
+        <item>Transito</item>
     </string-array>
 
     <drawable name="ab_bg_black">#88000000</drawable>

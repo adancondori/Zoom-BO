@@ -2,10 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginTop="5dp" >
+    android:background="@color/background"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin" >
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
@@ -16,9 +15,11 @@
         android:layout_marginBottom="5dp" >
 
         <EditText
-            android:id="@+id/search_buscar_favorito"
+            android:id="@+id/search_buscar_contactos"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
             android:layout_marginTop="0dp"
             android:background="@drawable/redondeado"
             android:drawableLeft="@drawable/abs__ic_search_api_holo_light"
@@ -40,8 +41,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/relativeLayout1" >
-
+        android:layout_below="@+id/relativeLayout1"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp" >
     </ExpandableListView>
 
 </RelativeLayout>

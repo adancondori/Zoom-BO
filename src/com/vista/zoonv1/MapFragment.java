@@ -17,7 +17,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.tabs.adancc.desplazarview.TabsActivity;
 import com.vista.GPSsingleton.GPS;
 import com.vista.GPSsingleton.Pedido_Singleton;
-import com.vista.adapter.Adapter_ExpandableList;
 import com.vista.json.ParserFunction;
 import com.vista.json.Protocolo_Comunicacion;
 import com.vista.menuder.MenuDERFragment;

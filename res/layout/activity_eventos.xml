@@ -3,15 +3,178 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".EventosActivity" >
+    tools:context=".DetalleContactoActivity" >
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rela_principal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background" >
+
+        <ImageView
+            android:id="@+id/fotouser"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/img_selector"
+            android:contentDescription="@string/title_content_imagendescripcion"
+            android:src="@drawable/profle" />
+
+        <TextView
+            android:id="@+id/txt_nombre_contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/fotouser"
+            android:layout_toRightOf="@+id/fotouser"
+            android:text="Adan Condori C."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_detalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fotouser"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/fotouser"
+            android:layout_marginBottom="5dp"
+            android:drawableLeft="@drawable/mp_home"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="Los Lotes"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/text_trabajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fotouser"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/text_detalle"
+            android:layout_marginBottom="5dp"
+            android:drawableLeft="@drawable/mp_briefcase"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:text="Aqui se colovcara un anuncio del evento que se realice o el usuaruio prefiera. como por ejemlo la direccion i porque se hace la fiesta"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txt_telefono_contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fotouser"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/fotouser"
+            android:drawableLeft="@drawable/mp_smartphone"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="79050606"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/text_direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_telefono_contacto"
+            android:layout_below="@+id/txt_nombre_contacto"
+            android:layout_toRightOf="@+id/fotouser"
+            android:drawableLeft="@drawable/mp_email"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="pepito@gmial.com"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/map_evento"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rela_principal" />
+
+    <LinearLayout
+        android:id="@+id/liner_hijo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aqui Eventos Lista" />
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/map_evento"
+        android:choiceMode="singleChoice"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/img_selector"
+            android:contentDescription="@string/title_content_imagendescripcion"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/focus" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tipo_mapas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/img_selector"
+            android:contentDescription="@string/title_content_imagendescripcion"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/mapas" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/img_selector"
+            android:contentDescription="@string/title_content_imagendescripcion"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/zoomcircle" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_micro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/img_selector"
+            android:contentDescription="@string/title_content_imagendescripcion"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/bus" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </RelativeLayout>

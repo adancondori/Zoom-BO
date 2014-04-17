@@ -76,6 +76,7 @@
     <string name="publish_photo">Publish photo</string>
     <string name="get_albums">Get albums</string>
     <string name="title_activity_map_direciones_">Nueva Dirección</string>
-    <string name="title_activity_favoritos_">Mis Favoritos</string>
+    <string name="title_activity_favoritos_">Mis Preferidos</string>
+    <string name="title_activity_mis__favoritos1_">Mis Favoritos</string>
 
 </resources>
